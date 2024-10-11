@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./scss/reset/reset";
+@import "./scss/variables/variables";
+
+.content {
+    background-color: #001F3F;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #829bb3b9;
+    border-radius: 999px;
+    border: 0 solid #f1f1f1;
+    transition: all 1s linear;
+
+    &:hover {
+        background-color: #5b6f81be;
+    }
+}

@@ -1,0 +1,44 @@
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="2000">
+            <div class="w-100 d-block custom-slide firts bg-firts d-flex align-items-center" *ngFor="let image of firtsCarousel; let i = index">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="d-flex flex-column gap-3">
+                                <p class="fs-4 px-5 title-color fw-medium">{{ "Impulsa tus sueños y hazlos tangibles con NovaCapital" | uppercase}}</p>
+                                <h2 class="title text-white px-5">Transformando tus Metas en Realidad</h2>
+                                <p class="fs-3 text-white fw-300 px-5">Nuestro enfoque es convertir tus metas financieras en realidad. Con soluciones personalizadas y un equipo comprometido, te ofrecemos el apoyo necesario para alcanzar tus objetivos, ya sea ahorrar, invertir o hacer crecer tu patrimonio. El propósito es acompañarte en cada paso hacia el éxito financiero.</p>
+                                <div class="mt-4 w-50 px-5">
+                                    <button routerLink="#" class="btn w-100 rounded-pill border-0 p-3 animationbutton" (mouseenter)="buttonhover = true" (mouseleave)="buttonhover = false"> 
+                                        <div class="d-flex defa align-items-center justify-content-center">
+                                        <span class="d-flex justify-content-center align-items-center gap-4">
+                                            <h3 class="fs-3 fw-medium">{{ buttonhover? 'Ver más' : 'Nuestros servicios'}} <i *ngIf="!buttonhover" class="fa-solid fa-chevron-right fs-5"></i></h3>
+                                        </span>
+                                        </div> 
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <img [src]="image.firtsPhoto" [alt]="image.altfirts">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let image of images; let i = index" class="carousel-item" data-bs-interval="3000">
+            <img [src]="image.itemphoto" class="d-block w-100 firts" [alt]="image.namePhoto">
+        </div>
+    </div>
+    <button class="carousel-control-prev none" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next none" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+

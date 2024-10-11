@@ -1,0 +1,14 @@
+<div class="row w-100 pt-44 gap-5 d-flex justify-content-center">
+    <div class="col-4 p-0" *ngFor="let itemcard of CardData; let i = index">
+        <div class="card rounded-5 bg-cards">
+            <div class="card-body p-56 d-flex flex-column gap-16">
+                <p class="mini-title-letter text-purple m-0">{{itemcard.minititle}}</p>
+                <h5 class="card-title text-white letter-title-card m-0">{{itemcard.title}}</h5>
+                <p class="card-text font-p m-0">{{itemcard.description}}</p>
+            </div>
+            <div>
+                <img class="img-card" [src]="itemcard.firtsPhoto" [alt]="itemcard.altfirts">
+            </div>
+        </div>
+    </div>
+</div>

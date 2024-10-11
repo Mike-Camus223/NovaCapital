@@ -1,0 +1,36 @@
+<div class="container-fluid py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8 col-md-10">
+            <div class="row row-cols-1 row-cols-md-4 g-3">
+                <div class="col" *ngFor="let data of systemdata; let i = index">
+                    <div class="card bg-cards border-0 h-100 rounded-5 position-relative">
+                      <div class="d-flex px-4 justify-content-center flex-column gap-2 card-body border-0 rounded-0">
+                        <h5 class="card-title text-center text-purple fs-3">{{data.title}}</h5>
+                        <p class="card-text text-center fs-3 font-p">{{data.description}}</p>
+                      </div>
+                      <div class="position-relative">
+                        <img [src]="data.img" [alt]="data.alrImg" class="card-img-top img_style">
+                        <button routerLink="#" class="rounded-pill position-absolute button-cards p-2 fs-3 ">{{data.button}}</button>
+                      </div>
+                    </div>
+                  </div>                  
+                <div class="col d-flex flex-column gap-3 h-100">
+                    <div routerLink="#" class="p-0 d-flex flex-column flex-grow-1 cursortype" *ngFor="let datatwo of secondSystemData; let i = index">
+                        <div class="p-0 bg-cards rounded-5 d-flex h-100">
+                            <div class="w-1 d-flex flex-column justify-content-center align-items-center">
+                                <i [ngClass]="datatwo.icon" class="icon-size text-white"></i>
+                            </div>
+                            <div class="card-body p-4 w-2">
+                                <p class="font-p fs-4">
+                                    <span class="text-purple fs-3 fw-medium">{{datatwo.title}}</span> 
+                                    {{datatwo.description}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>

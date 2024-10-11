@@ -1,0 +1,52 @@
+.img_style {
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.bg-cards {
+    background-color: #213d57;
+}
+
+.text-purple {
+    color: #9182f8;
+}
+
+.font-p{
+    color: #D1D5DB;
+    font-weight: 400;
+}
+
+.w-1 {
+    width: 30%;
+}
+
+.w-2 {
+    width: 70%;
+}
+
+.button-cards {
+    width: 80%;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    background-color: #9182f8;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: #ffffff;
+        background-color: #776cbb;
+    }
+}
+
+.icon-size {
+    font-size: 4rem;
+}
+
+.cursortype {
+    cursor: pointer;
+}
