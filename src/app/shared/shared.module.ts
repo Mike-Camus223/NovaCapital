@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { PublicRoutingModule } from '../public/public-routing.module';
 import { CarouselcardsComponent } from './components/carouselcards/carouselcards.component';
 import { CardspublicgridComponent } from './components/cardspublicgrid/cardspublicgrid.component';
 import { Section2cardsComponent } from './components/section2cards/section2cards.component';
-
+import { FooterComponent } from './components/footer/footer.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -13,17 +13,20 @@ import { Section2cardsComponent } from './components/section2cards/section2cards
     CarouselComponent,
     CarouselcardsComponent,
     CardspublicgridComponent,
-    Section2cardsComponent
+    Section2cardsComponent,
+    FooterComponent,
+  NavbarComponent
   ],
   imports: [
-    CommonModule,
-    PublicRoutingModule
+    CommonModule
   ],
   exports: [
     CarouselComponent,
     CarouselcardsComponent,
     CardspublicgridComponent,
-    Section2cardsComponent
-  ]
+    Section2cardsComponent,
+    FooterComponent,
+    NavbarComponent
+  ],
 })
 export class SharedModule { }

@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-import { PublicRoutingModule } from './public-routing.module';
-import { HomeComponent } from './pages/home/home.component';
 import { SharedModule } from '../shared/shared.module';
+import { HomeComponent } from './pages/home/home.component';
 import { NewsComponent } from './pages/news/news.component';
-
+import { CommonModule } from '@angular/common';
+import { PublicRoutingModule } from './public-routing.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +13,7 @@ import { NewsComponent } from './pages/news/news.component';
   imports: [
     CommonModule,
     PublicRoutingModule,
-    SharedModule,
+    SharedModule
   ],
 })
 export class PublicModule { }

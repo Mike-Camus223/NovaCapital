@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg bg-navbar w-100">
+    <div class="container centered">
+        <a class="navbar-brand text-white fs-3">
+            <i class="fa-solid fa-gem fs-3"></i><span class="fs-2"> NovaCapital</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars-staggered text-white fs-3"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active text-white fs-3" aria-current="page">Novedades</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white fs-3">Conocenos</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dro text-white fs-3" role="button"
+                        aria-expanded="false">
+                        Personas <i class="fa-solid fa-chevron-down fs-6" [ngClass]="{'rotate': isArrowUp}"></i>
+                    </a>
+                    <ul class="dropdown-menu bg-dropdown rounded-4 py-4"
+                        [ngClass]="{'show': isDropdownOpen, 'hide': isDropdownClosing}">
+                        <li>
+                            <a class="dropdown-item fs-3 p-0">
+                                <div class="d-flex gap-3 wii">
+                                    <div class="primero d-flex justify-content-center align-items-center rounded-4 bg-maincontent">
+                                        <i class="fa-regular fa-credit-card fs-1 text-white"></i>
+                                    </div>
+                                    <div class="segundo d-flex flex-column m-0">
+                                        <h3 class="fs-3 fw-medium text-white">Tarjetas</h3>
+                                        <p class="fs-4 fw-medium m-0 text-white">Tarjeta premium: límite alto,
+                                            recompensas y acceso VIP</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item fs-3 p-0">
+                                <div class="d-flex gap-3 wii">
+                                    <div class="primero d-flex justify-content-center align-items-center rounded-4 bg-maincontent">
+                                        <i class="fa-solid fa-hand-holding-dollar fs-1 text-white"></i>
+                                    </div>
+                                    <div class="segundo d-flex flex-column m-0">
+                                        <h3 class="fs-3 fw-medium text-white">Inversiones</h3>
+                                        <p class="fs-4 fw-medium m-0 text-white">Haz crecer tu patrimonio con nuestras
+                                            opciones de inversión personalizadas</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item fs-3 p-0">
+                                <div class="d-flex gap-3 wii">
+                                    <div class="primero d-flex justify-content-center align-items-center rounded-4 bg-maincontent">
+                                        <i class="fa-solid fa-shield-halved fs-1 text-white"></i>
+                                    </div>
+                                    <div class="segundo d-flex flex-column m-0">
+                                        <h3 class="fs-3 fw-medium text-white">Seguros</h3>
+                                        <p class="fs-4 fw-medium m-0 text-white">Protege lo que más valoras con nuestras
+                                            opciones de seguros</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="d-flex gap-2">
+                <ul class="navbar-nav d-flex gap-3">
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="collapse" id="collapseExample">
+    <div class="custom-img">
+        
+    </div>
+</div>

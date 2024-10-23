@@ -1,0 +1,26 @@
+<hr class="text-white fs-3">
+<div class="container-fluid mt-4 bg-footer">
+    <div class="row justify-content-center">
+        <div class="col-3 h-90">
+            <ul class="m-0 h-90 p-0 d-flex justify-content-center align-items-center gap-icon">
+                <li *ngFor="let icondata of datafooterIcon.slice(0, 4); let i = index">
+                    <a [href]="icondata.url" class="nav-link">
+                        <i [ngClass]="icondata.icon" class="fs-1 text-white"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-6 h-90 d-flex justify-content-center align-items-center">
+            <h5 class="font-d text-white">{{footerDataD}}</h5>
+        </div>
+        <div class="col-3 h-90">
+            <ul class="m-0 h-90 p-0 d-flex justify-content-center align-items-center gap-icon">
+                <li *ngFor="let icondata of datafooterIcon.slice(4); let i = index">
+                    <a [href]="icondata.url" class="nav-link">
+                        <i [ngClass]="icondata.icon" class="fs-1 text-white"></i>
+¿                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
