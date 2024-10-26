@@ -1,32 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { CarouselcardsComponent } from './components/carouselcards/carouselcards.component';
-import { CardspublicgridComponent } from './components/cardspublicgrid/cardspublicgrid.component';
-import { Section2cardsComponent } from './components/section2cards/section2cards.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { RouterModule } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { FormsModule } from '@angular/forms'; 
+import { InputTextModule } from 'primeng/inputtext';
+import { InputSwitchModule } from 'primeng/inputswitch';
+
 
 
 @NgModule({
-  declarations: [
-    CarouselComponent,
-    CarouselcardsComponent,
-    CardspublicgridComponent,
-    Section2cardsComponent,
-    FooterComponent,
-  NavbarComponent
-  ],
+  declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule,
+    ButtonModule,
+    FloatLabelModule,
+    InputTextModule,
+    FormsModule,
+    InputSwitchModule
   ],
-  exports: [
-    CarouselComponent,
-    CarouselcardsComponent,
-    CardspublicgridComponent,
-    Section2cardsComponent,
-    FooterComponent,
-    NavbarComponent
-  ],
+  exports: [],
 })
 export class SharedModule { }

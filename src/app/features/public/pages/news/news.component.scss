@@ -1,0 +1,9 @@
+.main-content {
+    transition: margin-left 0.3s ease; 
+    margin-left: 0; 
+    padding: 20px;
+}
+
+.main-content.sidebar-active {
+    margin-left: 200px; 
+}

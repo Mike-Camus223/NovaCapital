@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotoService } from '../../../core/services/photo.service';
+import { PhotoService } from '../../../../core/services/photo.service';
 
 interface firts {
   firtsPhoto: string;

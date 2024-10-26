@@ -10,8 +10,8 @@ import { AuthRoutingModule } from './auth-routing.module';
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule,
-    SharedModule
+    SharedModule,
+    AuthRoutingModule
   ],
   exports: [
     RegisterComponent
