@@ -6,7 +6,9 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { ToggleButtonModule } from 'primeng/togglebutton';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
-
+import { StyleClassModule } from 'primeng/styleclass';
+import { AvatarModule } from 'primeng/avatar';
+import { RippleModule } from 'primeng/ripple';
 
 
 @NgModule({
@@ -14,20 +16,26 @@ import { FloatLabelModule } from 'primeng/floatlabel';
   imports: [
     CommonModule,
     SidebarModule,
-    ButtonModule,
     InputSwitchModule,
     ToggleButtonModule,
     InputTextModule,
     FloatLabelModule,
+    ButtonModule,
+    RippleModule,
+    AvatarModule,
+    StyleClassModule
   ],
   exports: [
     CommonModule,
     SidebarModule,
-    ButtonModule,
     InputSwitchModule,
     ToggleButtonModule,
     InputTextModule,
     FloatLabelModule,
+    ButtonModule,
+    RippleModule,
+    AvatarModule,
+    StyleClassModule
   ]
 })
 export class UiModule { }

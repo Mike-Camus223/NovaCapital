@@ -1,9 +1,43 @@
 @import "./scss/reset/reset";
 @import "./scss/variables/variables";
+@import "./scss/fonts/fontSizes";
 
+body {
+    transition: background-color 0.3s ease;
+}
 
-.content {
- background-color: #001F3F;
+.lara-light-blue {
+    background-color: #ffffff;
+    color: #111827; 
+}
+
+.lara-dark-blue {
+    background-color: #111827; 
+    color: #ffffff; 
+}
+
+.lara-light-blue h1, 
+.lara-light-blue h2, 
+.lara-light-blue h3, 
+.lara-light-blue h4, 
+.lara-light-blue h5, 
+.lara-light-blue h6, 
+.lara-light-blue p,
+.lara-light-blue span,
+.lara-light-blue a {
+    color: #111827;
+}
+
+.lara-dark-blue h1, 
+.lara-dark-blue h2, 
+.lara-dark-blue h3, 
+.lara-dark-blue h4, 
+.lara-dark-blue h5, 
+.lara-dark-blue h6, 
+.lara-dark-blue p,
+.lara-dark-blue span,
+.lara-dark-blue a {
+    color: #ffffff; 
 }
 
 ::-webkit-scrollbar {

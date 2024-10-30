@@ -5,14 +5,22 @@ import { NewsComponent } from './pages/news/news.component';
 
 const routes: Routes = [
   {
-    path: '', component: HomeComponent
+    path: '',
+    component: HomeComponent
   },
   {
-    path: 'news', component: NewsComponent
+    path: 'news',
+    component: NewsComponent
   },
   {
-    path: '', redirectTo: 'home', pathMatch: 'full'
+    path: '',
+    redirectTo: '/', 
+    pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: 'home' 
+  }
 ];
 
 @NgModule({

@@ -8,21 +8,18 @@ import { Component, Inject } from '@angular/core';
 })
 export class NewsComponent {
 
-  // checked: boolean = false;
+  //  checked: boolean = false;
 
-  // constructor(private changeThemeSys: ChangeThemeService) { 
-  //   this.checked = this.changeThemeSys.themeselection;
-  // }
+  //  constructor(private changeThemeSys: ChangeThemeService) { 
+  //    this.checked = this.changeThemeSys.themeselection;
+  //  }
 
-  // switchMethod(checked: boolean) {
-  //   this.checked = checked;
-  //   this.changeThemeSys.changeTheme(checked);
-  // }
+  //  switchMethod(checked: boolean) {
+  //    this.checked = checked;
+  //    this.changeThemeSys.changeTheme(checked);
+  //  }
 
-  // visibleSidebar = false;
+  //  visibleSidebar = false;
 
-  // toggleSidebar() {
-  //   this.visibleSidebar = !this.visibleSidebar; 
-  // }
-
+   
 }

@@ -1,0 +1,37 @@
+.main-content {
+    transition: margin-left 0.3s ease;
+    margin-left: 0;
+    padding: 20px;
+}
+
+.main-content.sidebar-active {
+    margin-left: 30rem;
+}
+
+a.p-ripple {
+    text-decoration: none;
+}
+
+.p-sidebar .p-sidebar-header {
+    padding: 0;
+}
+
+::ng-deep .p-sidebar .p-sidebar-header {
+    display: none;
+}
+
+.padding-header {
+    padding: 3rem;
+}
+
+.bg-transparent {
+    background-color: transparent;
+}
+
+:root {
+    --teal-800: #00796b; /* Código de color para teal-800 */
+}
+
+.container-button {
+    width: 9rem;
+}
