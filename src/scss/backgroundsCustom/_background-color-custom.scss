@@ -1,0 +1,102 @@
+// Definición de colores para los temas
+// Colores para el tema claro
+$bg-light-cream: #f5f5dc; // Blanco crema
+$bg-light-green: #b2ff66; // Verde slime
+$bg-light-aquamarine: #7fffd4; // Aquamarino
+$bg-light-pink: #ffccff; // Rosado
+$bg-light-orange: #ffcc00; // Naranja
+$bg-light-purple: #e6e6fa; // Morado
+$bg-light-blue-night: #add8e6; // Azul oscuro cielo noche
+
+// Colores para el tema oscuro
+$bg-dark-black: #000000; // Negro
+$bg-dark-purple: #4b0082; // Morado oscuro
+$bg-dark-green: #006400; // Verde oscuro
+$bg-dark-aquamarine: #005757; // Aquamarino oscuro
+$bg-dark-pink: #8b008b; // Rosado oscuro
+$bg-dark-orange: #ff4500; // Naranja oscuro
+$bg-dark-cream: #a52a2a; // Crema oscuro
+$bg-dark-blue-night: #191970; // Azul oscuro cielo noche
+
+// Clases de fondo personalizadas
+.bg-black {
+  &.light {
+    background-color: $bg-light-cream; // Blanco crema para el tema claro
+    color: #000; // Color de texto para fondo claro
+  }
+
+  &.dark {
+    background-color: $bg-dark-black; // Negro para el tema oscuro
+    color: #fff; // Color de texto para fondo oscuro
+  }
+}
+
+.bg-purple {
+  &.light {
+    background-color: $bg-light-purple; // Morado claro
+  }
+
+  &.dark {
+    background-color: $bg-dark-purple; // Morado oscuro
+  }
+}
+
+.bg-green {
+  &.light {
+    background-color: $bg-light-green; // Verde slime
+  }
+
+  &.dark {
+    background-color: $bg-dark-green; // Verde oscuro
+  }
+}
+
+.bg-aquamarine {
+  &.light {
+    background-color: $bg-light-aquamarine; // Aquamarino
+  }
+
+  &.dark {
+    background-color: $bg-dark-aquamarine; // Aquamarino oscuro
+  }
+}
+
+.bg-pink {
+  &.light {
+    background-color: $bg-light-pink; // Rosado
+  }
+
+  &.dark {
+    background-color: $bg-dark-pink; // Rosado oscuro
+  }
+}
+
+.bg-orange {
+  &.light {
+    background-color: $bg-light-orange; // Naranja
+  }
+
+  &.dark {
+    background-color: $bg-dark-orange; // Naranja oscuro
+  }
+}
+
+.bg-cream {
+  &.light {
+    background-color: $bg-light-cream; // Blanco crema
+  }
+
+  &.dark {
+    background-color: $bg-dark-cream; // Crema oscuro
+  }
+}
+
+.bg-blue-night {
+  &.light {
+    background-color: $bg-light-blue-night; // Azul oscuro cielo noche
+  }
+
+  &.dark {
+    background-color: $bg-dark-blue-night; // Azul oscuro cielo noche
+  }
+}

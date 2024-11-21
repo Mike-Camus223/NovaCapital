@@ -1,0 +1,112 @@
+#chart {
+    width: 100%;
+    height: 350px;
+}
+
+.bg-appDark-Light {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-container {
+    border-radius: 50%;
+    width: 47px;
+    height: 47px;
+}
+
+.photoUser {
+    border-radius: 50%;
+    width: 47px;
+    height: 47px;
+}
+
+.photo-container2 {
+    border-radius: 50%;
+    width:56px;
+    height:56px;
+}
+
+.photoUserPri {
+    border-radius: 50%;
+    width:56px;
+    height:56px;
+}
+
+::ng-deep .apexcharts-legend-text {
+    font-weight: lighter !important;
+    font-size: 1.5rem !important;
+}
+
+::ng-deep .apexcharts-yaxis-label {
+    font-size: 1.25rem !important;
+    font-weight: bolder !important;
+}
+
+::ng-deep .apexcharts-xaxis-label {
+    font-size: 1.25rem !important;
+    font-weight: bolder !important;
+}
+
+::ng-deep .apexcharts-title-text {
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
+
+::ng-deep .apexcharts-yaxis-title-text {
+    font-weight: bolder;
+    font-size: 1.25rem !important;
+}
+
+
+.scrollable-container {
+    overflow-y: auto;
+}
+
+
+canvas {
+    width: 100% !important; 
+    height: auto !important; 
+}
+
+.neon-bg {
+    box-shadow: 0 5px 18px rgba(32, 201, 151, 0.4), 0 10px 40px rgba(32, 201, 151, 0.3);
+}
+
+.neon-bg-red {
+    box-shadow: 0 5px 18px #dc354657, 0 10px 40px #dc354634;
+}
+
+.neon-bg-skyblue {
+    box-shadow: 0 5px 18px #00cfde5d, 0 10px 40px #00cfde3d;
+}
+
+.icon-size {
+    font-size: 3.5rem;
+}
+
+.text-shadow {
+    text-shadow: 0 5px 18px #20c99766, 0 10px 40px #20c9974d;
+}
+
+.text-shadow-red {
+    text-shadow: 0 5px 18px #dc354657, 0 10px 40px #dc354634 ;
+}
+
+.text-shadow-skyblue {
+    text-shadow: 0 5px 18px #00cfde5d, 0 10px 40px #00cfde3d;
+}
+
+.colorbg {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.p-divider.p-divider-horizontal {
+    margin: 0.5rem 0;   
+}
+
+.font-32{
+    font-size: 28px;
+}

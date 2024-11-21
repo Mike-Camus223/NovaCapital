@@ -1,3 +1,169 @@
-<div class="card flex justify-content-center">
-    
+<div class="bg-login w-12">
+  <div class="start-pri justify-content-between marginNav">
+    <div class="brand">
+      <a class="text-white fs-3" routerLink="">
+        <i class="fa-solid fa-gem fs-3"></i><span class="fs-2"> NovaCapital</span>
+      </a>
+    </div>
+    <div class="flex gap-4 align-items-center">
+      <span class="fs-4 text-white font-semibold">Online Banking</span>
+      <a routerLink="">
+        <p-button icon="pi pi-times fs-4 text-white" [style]=" {'box-shadow': 'none', 'border' : 'none' } "
+          [rounded]="true" [text]="true" severity="secondary" />
+      </a>
+    </div>
+  </div>
+</div>
+<div class="p-fluid ContainerCollapseHeight">
+  <div class="grid grid-nogutter">
+    <div class="col-6">
+      <div class="bg-white ContainerCollapseHeight flex justify-content-center align-items-center">
+        <div class="card w-5 flex flex-column gap-2">
+          <div class="flex flex-column gap-5">
+            <div class="text-600 fs-3">
+              <i class="fa-solid fa-gem fs-2"></i><span class="fs-2"> NovaCapital</span>
+            </div>
+            <h2 class="title-size text-black font-bold">
+              <span class="flex flex-column gap-1">
+                Control Your Finances,
+              </span>
+              <span>
+                Join Us Today!
+              </span>
+            </h2>
+            <span class="font-title-log text-color-secondary">
+              Fill the form below to create an account
+            </span>
+          </div>
+          <div class="stepper-container">
+            <div class="steps">
+              <div class="step" *ngFor="let step of steps; let i = index" [class.active]="currentStep === i"
+                [class.completed]="completedSteps[i]">
+                <ng-container [ngSwitch]="i">
+                  <ng-container *ngSwitchCase="0">
+                    <form class="flex flex-column gap-5 w-12">
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-id-card fs-4"></i></p-inputGroupAddon>
+                        <input [disabled]="true" class="fs-4" pInputText placeholder="Document Type" />
+                        <p-inputGroupAddon [ariaDisabled]="true">
+                          <i class="pi pi-angle-down fs-4"></i>
+                        </p-inputGroupAddon>
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-id-card fs-4"></i></p-inputGroupAddon>
+                        <input [disabled]="true" class="fs-4" pInputText placeholder="Document Number" />
+                        <p-inputGroupAddon [ariaDisabled]="true">
+                          <i class="pi pi-angle-down fs-4"></i>
+                        </p-inputGroupAddon>
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-user fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Name" />
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-user fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Last name" />
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-calendar fs-4"></i></p-inputGroupAddon>
+                        <p-calendar class="fs-4" placeholder="Date" [appendTo]="'body'" [showIcon]="true"
+                          [iconDisplay]="'input'" [showIcon]="true" inputId="templatedisplay">
+                          <ng-template class="flex align-items-center" pTemplate="inputicon" let-clickCallBack="clickCallBack">
+                            <i class="pi pi-clock pointer-events-none pointer-events-none fs-4"></i>
+                          </ng-template>
+                        </p-calendar>
+                      </p-inputGroup>
+                    </form>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="1">
+                    <form class="flex flex-column gap-5 mt-4">
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-id-card fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Full Name" />
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-calendar fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Date of Birth" />
+                      </p-inputGroup>
+                    </form>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="2">
+                    <form class="flex flex-column gap-5 mt-4">
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-home fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Address" />
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-map-marker fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="City" />
+                      </p-inputGroup>
+                    </form>
+                  </ng-container>
+                  <ng-container *ngSwitchCase="3">
+                    <form class="flex flex-column gap-5 mt-4">
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-phone fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Phone Number" />
+                      </p-inputGroup>
+                      <p-inputGroup>
+                        <p-inputGroupAddon><i class="pi pi-envelope fs-4"></i></p-inputGroupAddon>
+                        <input class="fs-4" pInputText placeholder="Alternate Email" />
+                      </p-inputGroup>
+                    </form>
+                  </ng-container>
+                </ng-container>
+                <button *ngIf="i < steps.length - 1" (click)="goToNextStep()"
+                  class="fs-4 py-2 my-4 bg-login-button w-12 text-white border-round-3xl border-none transition-linear transition-duration-200">
+                  Next
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-column gap-4">
+            <div class="flex justify-content-start gap-2">
+              <span class="fs-4 text-black font-semibold">
+                Already have an account?
+              </span>
+              <span>
+                <a routerLink="/register" class="fs-4 text-login text-a-login font-semibold">Sigin</a>
+              </span>
+            </div>
+            <div class="navigation-buttons">
+              <button *ngFor="let step of steps; let i = index" class="nav-button" [disabled]="!completedSteps[i]"
+                (click)="goToStep(i)">
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="bg-login flex justify-content-center align-items-center ContainerCollapseHeight">
+        <p-carousel [value]="ImagesCarousel" [numVisible]="1" [numScroll]="1" [circular]="true" showNavigators="false"
+          [autoplayInterval]="4000" [indicatorStyle]="{'border-radius': '10px', 'width' : '10px', 'height' : '10px'}"
+          class="flex justify-content-center align-items-center">
+          <ng-template let-images pTemplate="item">
+            <div class="flex align-items-center flex-column justify-content-center" style="gap: 20px;">
+              <img [src]="images.image" class="m-auto imgCarousel" [alt]="images.altImage"
+                [draggable]="images.draggable">
+              <div class="py-4 flex gap-3 flex-column w-8">
+                <h2 class="fs-1 text-white title-size">
+                  {{images.title}}
+                </h2>
+                <div class="flex gap-5 align-items-center">
+                  <div>
+                    <i class="pi fs-1 text-white" [ngClass]="images.icon"></i>
+                  </div>
+                  <span class="fs-3 text-white font-subtitle">
+                    {{images.msg}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </p-carousel>
+      </div>
+    </div>
+  </div>
 </div>

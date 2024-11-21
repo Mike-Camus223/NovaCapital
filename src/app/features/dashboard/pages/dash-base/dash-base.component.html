@@ -60,55 +60,63 @@
             </ul>
         </li> -->
     </ul>
-    <ul class="list-none p-3 m-0">
-        <li>
-            <div pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="slidedown" leaveToClass="hidden"
-                leaveActiveClass="slideup"
-                class="p-3 flex align-items-center justify-content-between text-600 cursor-pointer p-ripple">
-                <span class="font-medium">APPLICATION</span>
-                <i class="pi pi-chevron-down"></i>
-            </div>
-            <ul class="list-none p-0 m-0 overflow-hidden">
-                <li>
-                    <a pRipple
-                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-                        <i class="pi pi-folder mr-2"></i>
-                        <span class="font-medium">Projects</span>
-                    </a>
-                </li>
-                <li>
-                    <a pRipple
-                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-                        <i class="pi pi-chart-bar mr-2"></i>
-                        <span class="font-medium">Performance</span>
-                    </a>
-                </li>
-                <li>
-                    <a pRipple
-                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-                        <i class="pi pi-cog mr-2"></i>
-                        <span class="font-medium">Settings</span>
-                    </a>
-                </li>
-            </ul>
-        </li>
-    </ul>
 </p-sidebar>
-<div class="main-content text-white" [class.sidebar-active]="visibleSidebar">
-    <div class="p-fluid">
-        <div>
-
+<div class="prin-container" [class.sidebar-active]="visibleSidebar">
+    <div class="menu-container flex p-fluid h-menu justify-content-between align-items-center align-items-center overflow-hidden sticky top-0 bg-appDark-Light border-bottom-1 text-bluegray-600">
+        <div class="flex gap-4 align-items-center">
+            <p-button [rounded]="true" icon="pi pi-bars" [size]="'large'" severity="secondary" [outlined]="true"
+                [style]="{'border':'none','width': '3.5rem', 'height': '3.5rem'}" (click)="toggleSidebar()"></p-button>
+            <div class="flex gap-4 align-items-center">
+                <h2 class="font-23-18">{{ greetings | uppercase }}</h2>
+                <i class="fs-1" 
+                [class]="greetingsIcon" 
+                [ngStyle]="{'color': colorIcon}"
+                [ngClass]="[shadow]"></i>
+            </div>
         </div>
-        <div class="flex align-items-center container-button justify-content-between">
-            <p-button icon="pi pi-bell fs-2 " [size]="'large'" severity="secondary" [outlined]="true"
-                [style]="{'border':'none','width': '3.5rem', 'height': '3.5rem', }" />
-
-            <p-button severity="secondary" icon="{{ checked ? 'pi pi-sun fs-2' : 'pi pi-moon fs-2' }}" [outlined]="true"
-                (click)="changeTheme()" class="p-button-rounded p-button-text sun-moon-toggle" aria-label="Toggle theme"
-                [style]="{'border':'none','width': '3.5rem', 'height': '3.5rem', }">
-            </p-button>
+        <div class="flex gap-6 align-items-center">
+            <p-inputGroup>
+                <input class="fs-5" type="text" pInputText placeholder="Search"/>
+                <button type="button" pButton icon="pi pi-search"  class="p-button-secondary"></button>
+            </p-inputGroup>
+            <div class="flex align-items-center container-button gap-4">
+                <p-button (click)="changeNotify()" icon="{{ notifyChecked ? 'pi pi-bell-slash fs-2' : 'pi pi-bell fs-2'}}" [size]="'large'" severity="secondary" [outlined]="true"
+                  [rounded]="true"  [style]="{'border':'none','width': '3.5rem', 'height': '3.5rem'}"></p-button>
+                <p-button severity="secondary" icon="{{ checked ? 'pi pi-sun fs-2' : 'pi pi-moon fs-2' }}"
+                [rounded]="true"  [outlined]="true" (click)="changeTheme()" class="p-button-rounded p-button-text sun-moon-toggle"
+                    aria-label="Toggle theme" [style]="{'border':'none','width': '3.5rem', 'height': '3.5rem'}">
+                </p-button>
+            </div>
+            <div class="user-container flex align-items-center gap-3">
+                <div class="photo-container">
+                    <img src="assets/images/avatars/Person1.png" alt="" class="photoUser" draggable="false">
+                </div>
+                <h2 class="fs-4">User</h2>
+                <p-button class="no-focus-border" icon="pi pi-angle-down fs-4" severity="secondary"
+                    [outlined]=" 'none' "
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}"
+                    (onClick)="op.toggle($event)" />
+                <p-overlayPanel #op [styleClass]="'p-0'">
+                    <div class="flex flex-column gap-3 w-25rem">
+                        <ul class="list-none p-0 m-0 overflow-hidden">
+                            <li *ngFor="let itemSec of userPanelOption; let i = index">
+                                <ng-container>
+                                    <a pRipple [routerLink]="itemSec.link"
+                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple gap-3">
+                                        <i [ngClass]="[itemSec.icon]" class="fs-4"></i>
+                                        <span class="font-medium fs-4">{{itemSec.name}}</span>
+                                    </a>
+                                    <p-divider *ngIf="i === userPanelOption.length - 2"/>
+                                </ng-container>
+                            </li>
+                        </ul>
+                    </div>
+                </p-overlayPanel>
+            </div>
         </div>
     </div>
-    <button pButton type="button" label="Abrir Sidebar" (click)="toggleSidebar()"></button>
-    <router-outlet></router-outlet>
+    <div class="main-content">
+        <router-outlet></router-outlet>
+    </div>
 </div>
+

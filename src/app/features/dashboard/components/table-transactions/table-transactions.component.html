@@ -1,0 +1,49 @@
+<div class="card">
+    <p-table [paginator]="true" dataKey="id" [filterDelay]="0" [rowHover]="true" [rows]="10" [scrollable]="true" scrollHeight="400px" sortMode="multiple" sortField="name" [sortOrder]="-1" [tableStyle]="{'min-width': '60rem'}" responsiveLayout="scroll" [value]="transactions" [tableStyle]="{'min-width': '50rem'}">
+        <ng-template pTemplate="header">
+            <tr class="fs-4">
+                <th pSortableColumn="name" style="width:20%">
+                    <div class="header-cell">
+                        <span class="text-color-secondary">Name</span>
+                        <p-sortIcon field="name" class="custom-sort-icon"/>
+                    </div>
+                </th>
+                <th pSortableColumn="date" style="width:20%">
+                    <div class="header-cell">
+                        <span class="text-color-secondary">Date</span>
+                        <p-sortIcon field="date" class="custom-sort-icon"/>
+                    </div>
+                </th>
+                <th pSortableColumn="amount" style="width:20%">
+                    <div class="header-cell">
+                        <span class="text-color-secondary">Amount</span>
+                        <p-sortIcon field="amount" class="custom-sort-icon"/>
+                    </div>
+                </th>
+                <th pSortableColumn="status" style="width:20%">
+                    <div class="header-cell">
+                        <span class="text-color-secondary">Status</span>
+                        <p-sortIcon field="status" class="custom-sort-icon"/>
+                    </div>
+                </th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-transaction>
+            <tr class="fs-4">
+                <td>{{ transaction.name }}</td>
+                <td>{{ transaction.date | date: 'dd MMM yyyy' }}</td>
+                <td [ngStyle]="{'color': transaction.amount < 0 ? 'red' : 'green'}">
+                    {{ transaction.amount | currencyArg }}
+                </td>
+                <td class="fs-4">
+                    <p-tag class="p-element ng-star-inserted"
+                        [icon]="getStatusSeverity(transaction.status).icon"  
+                        [style]="{'font-size': '1.3rem'}" 
+                        [value]="transaction.status" 
+                        [severity]="getStatusSeverity(transaction.status).severity">
+                    </p-tag>
+                </td>
+            </tr>
+        </ng-template>        
+    </p-table>
+</div>

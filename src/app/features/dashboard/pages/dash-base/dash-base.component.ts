@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { MenuDashboardLinks } from '../../../../core/models/Menulinks.interface';
 import { ThemeService } from '../../../../core/services/Theme.service';
 
@@ -9,7 +9,13 @@ import { ThemeService } from '../../../../core/services/Theme.service';
 })
 export class DashBaseComponent {
 
+  greetings: string = '';
+  greetingsIcon: string = '';
+  colorIcon: string = '';
+  shadow: string = '';
   checked: boolean = false;
+  visibleSidebar: boolean = false;
+  notifyChecked: boolean = false;
 
   systemMenuSidebar: MenuDashboardLinks[] = [
     {
@@ -28,7 +34,13 @@ export class DashBaseComponent {
     }
   ];
 
-  visibleSidebar: boolean = false;
+  userPanelOption: any[] = [
+    { link: '##', icon: 'pi pi-user', name: 'View Profile' },
+    { link: '##', icon: 'pi pi-gift', name: 'Referred Friends' },
+    { link: '##', icon: 'pi pi-cog', name: 'Settings' },
+    { link: '##', icon: 'pi pi-lock', name: 'Security and Privacy' },
+    { link: '##', icon: 'pi pi-sign-out', name: 'Sign out' }
+  ]
 
   constructor(private themeService: ThemeService) { }
 
@@ -37,8 +49,36 @@ export class DashBaseComponent {
     const theme = this.checked ? 'lara-dark-blue' : 'lara-light-blue';
     this.themeService.switchTheme(theme);
   }
+
+  changeNotify() {
+    this.notifyChecked = !this.notifyChecked
+  }
+
+  defineGreeting(): void {
+    const date = new Date();
+    const ArgTime = date.getUTCHours() - 3;
+
+    if (ArgTime >= 6 && ArgTime < 12) {
+      this.greetings = 'Good Morning';
+      this.greetingsIcon = 'fa-solid fa-cloud-sun';
+      this.colorIcon = '#ffcd36';
+      this.shadow = 'shadowMorning';
+    } else if (ArgTime >= 12 && ArgTime < 18) {
+      this.greetings = 'Good Afternoon';
+      this.greetingsIcon = 'fa-solid fa-cloud';
+      this.colorIcon = '#c7ced9';
+      this.shadow = 'shadowAfternoon';
+    } else {
+      this.greetings = 'Good Night';
+      this.greetingsIcon = 'fa-solid fa-moon';
+      this.colorIcon = '#c0d2da';
+      this.shadow = 'shadowNight';
+    }
+  }
+
   ngOnInit(): void {
     this.visibleSidebar = true;
+    this.defineGreeting();
   }
   toggleSidebar(): void {
     this.visibleSidebar = !this.visibleSidebar;

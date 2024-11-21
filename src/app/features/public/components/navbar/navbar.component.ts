@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
+import { ViewportScroller } from '@angular/common';
 
 interface ButtonAuth {
   button: string;
@@ -12,8 +13,10 @@ interface ButtonAuth {
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-
-  value: string = '';
+  isCollapse: boolean = true;
+  menuVisible: boolean = false;
+  dropdownOpen = false;
+  isMobile = false;
 
   buttonAuthSystems: ButtonAuth[] = [
     {
@@ -28,52 +31,49 @@ export class NavbarComponent {
     },
   ];
 
-  toggleForm(index: number): void {
-    if (index === 1) {
-      const collapseElement = document.getElementById('collapseaqui');
-      const bodyElement = document.body;
+  constructor(private viewportScroller: ViewportScroller) { }
 
-      if (collapseElement) {
-        const isAtTop = window.scrollY === 0;
+  @HostListener('window:resize', ['$event'])
+  onResize() {
+    this.checkMobileView();
+  }
 
-        if (!isAtTop) {
-          window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-          });
+  ngOnInit() {
+    this.checkMobileView();
+  }
 
-          setTimeout(() => {
-            collapseElement.classList.toggle('open');
-            const isOpen = collapseElement.classList.contains('open');
-
-            if (isOpen) {
-              bodyElement.style.overflow = 'hidden';
-            } else {
-              bodyElement.style.overflow = '';
-            }
-          }, 500);
-        } else {
-
-          collapseElement.classList.toggle('open');
-          const isOpen = collapseElement.classList.contains('open');
-          if (isOpen) {
-            bodyElement.style.overflow = 'hidden';
-          } else {
-            bodyElement.style.overflow = '';
-          }
-        }
-      }
+  checkMobileView() {
+    this.isMobile = window.innerWidth <= 992;
+    if (!this.isMobile) {
+      this.dropdownOpen = false;
     }
   }
 
+  toggleDropdown() {
+    this.dropdownOpen = !this.dropdownOpen;
+  }
 
-  CerrarCollapse(): void {
-    const collapseElement = document.getElementById('collapseaqui');
-    const bodyElement = document.body;
-
-    if (collapseElement) {
-      collapseElement.classList.remove('open');
-      bodyElement.style.overflow = '';
+  toggleCollapse() {
+    if (this.isCollapse) {
+      const scrollPosition = this.viewportScroller.getScrollPosition();
+      if (scrollPosition[1] !== 0) {
+        this.viewportScroller.scrollToPosition([0, 0]);
+        setTimeout(() => {
+          this.isCollapse = !this.isCollapse;
+          document.body.style.overflow = 'hidden';
+        }, 300);
+      } else {
+        this.isCollapse = !this.isCollapse;
+        document.body.style.overflow = 'hidden';
+      }
+    } else {
+      this.isCollapse = !this.isCollapse;
+      document.body.style.overflow = 'auto';
     }
+  }
+
+  closeCollapse() {
+    this.isCollapse = true;
+    document.body.style.overflow = 'auto';
   }
 }

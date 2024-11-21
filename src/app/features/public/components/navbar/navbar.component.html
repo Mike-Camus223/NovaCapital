@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-navbar w-100">
+<!-- <nav class="bg-navbar w-12">
     <div class="container centered">
         <a class="navbar-brand text-white fs-3" routerLink="">
             <i class="fa-solid fa-gem fs-3"></i><span class="fs-2"> NovaCapital</span>
@@ -93,4 +93,81 @@
             </div>
         </div>
     </div>
+</div> -->
+<nav class="bg-navbar w-12">
+    <div class="grid flex justify-content-center">
+        <div class="xl:col-10 lg:col-10 md:col-12 sm:12 mobileCol">
+            <div class="flex align-items-center justify-content-between centered marginNav">
+                <div class="brand logomobile lg:hidden xl:hidden visibleNav">
+                    <a class="text-white fs-3" routerLink="">
+                        <i class="fa-solid fa-gem fs-3"></i><span class="fs-2"> NovaCapital</span>
+                    </a>
+                </div>
+                <ul *ngIf="!isMobile || dropdownOpen"
+                    class="nav-links lg:flex hidden align-items-center gap-6 list-none m-0 lg:flex-row">
+                    <li class="text-white fs-4">
+                        <a class="text-white logodesk fs-3" routerLink="">
+                            <i class="fa-solid fa-gem fs-3"></i><span class="fs-2"> NovaCapital</span>
+                        </a>
+                    </li>
+                    <li class="text-white fs-4"><a routerLink="/news"
+                            class="font-semibold hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Novedades</a>
+                    </li>
+                    <li class="text-white fs-4"><a routerLink="#"
+                            class="font-semibold hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Conocenos</a>
+                    </li>
+                    <li class="text-white fs-4"><a routerLink="#"
+                            class="font-semibold hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Personas</a>
+                    </li>
+                </ul>
+                <div class="flex md:hidden sm:hidden xl:block lg:block mobileScreen gap-2">
+                    <ul class="flex gap-3 list-none mobileScreen">
+                        <li *ngFor="let dataButtonAuth of buttonAuthSystems; let i = index">
+                            <button
+                            [routerLink]="dataButtonAuth.link"
+                            [ngClass]="{
+                                    'bg-register text-white border-2': i === 0,
+                                    'bg-warning2 border-2': i === 1
+                                }" class="cursor-pointer border-solid border-round-lg py-2 px-3 toggle-collapse-button"
+                                (click)="i === 1 ? toggleCollapse() : null">
+                                <i [ngClass]="dataButtonAuth.icon" class="fs-4"></i>
+                                <span class="fs-4 font-semibold"> {{ dataButtonAuth.button }} </span>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+                <button *ngIf="isMobile" (click)="toggleDropdown()"
+                    class="visibleNav block lg:hidden bg-navbar px-3 py-2 text-base border-none border-solid border-round-xl cursor-pointer transition-all transition-duration-200 hover:bg-blue-800 active:bg-blue-600">
+                    <i class="fs-2 text-white fa-solid fa-bars-staggered"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+<div *ngIf="isMobile" [ngClass]="{'open': dropdownOpen}" class="dropdown-menu z-5 fixed w-12 top-navbardrop">
+    <ul class="list-none p-0 m-0 flex-column bg-navbar fixed w-12">
+        <li class="text-white fs-4"><a routerLink="/news"
+                class="font-semibold hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Novedades</a>
+        </li>
+        <li class="text-white fs-4"><a routerLink="#"
+                class="font-semibold hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Conocenos</a>
+        </li>
+        <li class="text-white fs-4"><a routerLink="#"
+                class="font-semibold hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Personas</a>
+        </li>
+        <ul class="flex">
+            <li class="" *ngFor="let dataButtonAuth of buttonAuthSystems; let i = index">
+                <button [ngClass]="{
+                'bg-register text-white border-2': i === 0,
+                'bg-warning2 border-2': i === 1}" class="cursor-pointer border-solid border-round-lg py-2 px-3"
+                    (click)="i === 1 ? toggleCollapse() : null">
+                    <i [ngClass]="dataButtonAuth.icon" class="fs-4"></i>
+                    <span class="fs-4 font-semibold"> {{ dataButtonAuth.button }} </span>
+                </button>
+            </li>
+        </ul>
+    </ul>
+</div>
+<div [ngClass]="{ 'collapse-container': true, 'open': !isCollapse }">
+    <app-login (closeNavbarEvent)="closeCollapse()"></app-login>
 </div>

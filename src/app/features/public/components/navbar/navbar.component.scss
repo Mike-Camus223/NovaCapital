@@ -1,56 +1,11 @@
-@media screen and (max-width: 990px) {
-    .container {
-        max-width: 100%;
-        margin: 0 10px 0 10px;
-    }
-}
-
 .centered {
     height: 80px;
-    ;
     display: flex;
     align-items: center;
 }
 
-.nav-link {
-    transition: all 0.5s ease-in-out;
-
-    &:hover {
-        color: #06223d;
-    }
-}
-
-.color-icon {
-    color: #7c2b0e;
-}
-
-.nav-item i {
-    transition: transform 0.7s, opacity 0.5s;
-    opacity: 1;
-
-    &.hovericon2::before {
-        content: '\f055';
-        font-family: "Font Awesome 5 Free";
-        font-weight: 900;
-        opacity: 1;
-    }
-
-    &.hovericon2 {
-        -webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-        animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    }
-}
-
-.nav-item i.hovered-icon {
-    -webkit-animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    animation: fade-in-fwd 0.6s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-}
-
-.nav-item i.hovered-icon::before {
-    content: '\f2f6';
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    opacity: 1;
+.top-navbardrop {
+    top: 9%;
 }
 
 .bg-navbar {
@@ -58,90 +13,122 @@
     backdrop-filter: blur(10px);
 }
 
-
-@-webkit-keyframes fade-in-fwd {
-    0% {
-        -webkit-transform: translateZ(-80px);
-        transform: translateZ(-80px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        opacity: 1;
-    }
-}
-
-@keyframes fade-in-fwd {
-    0% {
-        -webkit-transform: translateZ(-80px);
-        transform: translateZ(-80px);
-        opacity: 0;
-    }
-
-    100% {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0);
-        opacity: 1;
-    }
-}
-
 .bg-warning2 {
     color: #7c2b0e;
     background-color: #ffb31e;
+    border-color: #ffb31e;
     transition: all 0.3s ease-in-out;
+
     &:hover {
+        border-color: #ffca60;
         background-color: #ffca60;
         color: #001F3F;
+    }
+
+    &:active {
+        background-color: #f7af21;
+        border-color: #f7af21;
     }
 }
 
 .bg-register {
     border-color: #b1a6fc;
+    background-color: transparent;
     transition: all 0.3s ease-in-out;
 
     &:hover {
         background-color: #d8d8d87e;
         border-color: #fff;
     }
-}
 
-.bg-login {
-    background-color: #086177;
-}
-
-// .custom-img {
-//     background: url('../../../../assets/images/blur.png');
-//     width: 100%;
-//     height: 100%;
-//     background-position: center;
-// }
-
-.ch-100 {
-    height: 100%;
+    &:active {
+        background-color: #d1d1d17e;
+        border-color: #d1d1d17e;
+    }
 }
 
 
-
-
-#collapseaqui {
-    width: 100%;
-    height: 0; 
+.collapse-container {
     overflow: hidden;
-    position: relative;
-    transition: height 0.5s ease; 
-  }
-  
-  #collapseaqui.open {
-    height: calc(100vh - 80px); 
-    overflow-y: auto;
-  }
-  
-  .containerpri {
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-  }
+    height: 0;
+    transition: height 0.3s ease, padding 0.3s ease, visibility 0.3s;
+    visibility: hidden;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
 
-  
+.collapse-container.open {
+    height: calc(100vh - 80px);
+    visibility: visible;
+    overflow-y: hidden;
+}
+
+
+body.overflow-hidden {
+    overflow: hidden;
+}
+
+.collapse-content {
+    padding: 1rem;
+}
+
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.brand h2 {
+    margin: 0;
+}
+
+.nav-links li,
+.dropdown-menu li {
+    color: #333;
+}
+
+.dropdown-menu {
+    padding: 0;
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.dropdown-menu.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+@media (min-width: 0px) and (max-width: 992px) {
+    .mobileScreen {
+        display: none;
+    }
+
+    .visibleNav {
+        display: block;
+    }
+
+    .mobileCol {
+        flex: 0 0 auto;
+        padding: 0.5rem;
+        width: 100%;
+    }
+
+    .marginNav {
+        margin-left: 27px;
+        margin-right: 27px;
+    }
+
+    .toggle-collapse-button {
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .toggle-collapse-button {
+        display: none;
+    }
+}

@@ -1,0 +1,44 @@
+<div class="gap-6 flex gap-6 flex-column">
+    <div class="p-fluid flex justify-content-between align-items-center">
+        <h2 class="fs-4">My Card</h2>
+        <button type="button"
+            class="bg-black-alpha-90 border-round-xl border-0 px-3 py-2 text-blue-50 fs-4 border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-black-alpha-70 active:bg-black-alpha-80">Add
+            Card
+        </button>
+    </div>
+    <div class="card">
+        <p-carousel [value]="CardUser" [numVisible]="1" [numScroll]="1" [circular]="true" [showIndicators]="false"
+            [responsiveOptions]="responsiveOptions">
+            <ng-template let-card pTemplate="Ccard">
+                <div class="flex justify-content-center w-12">
+                    <div [ngClass]="card.backgroundPri" class="p-4 w-10 relative" style="border-radius: 1rem;">
+                        <div class="flex flex-column gap-3 relative z-4">
+                            <div class="flex justify-content-between">
+                                <h3 class="fs-4 font-semibold" [ngClass]="card.colortext">{{card.typeNameCard}}</h3>
+                                <i class="fs-1" [ngClass]="[card.icon, card.colortext]"></i>
+                            </div>
+                            <div class="flex flex-column gap-2">
+                                <h3 class="fs-4 font-semibold" [ngClass]="card.colortext">{{card.title}}</h3>
+                                <span class="fs-2 font-semibold" [ngClass]="card.colortext">{{card.value | currencyArg}}</span>
+                            </div>
+                            <div class="flex justify-content-between">
+                                <span class="fs-3 font-semibold" [ngClass]="card.colortext">{{card.creditNumber |
+                                    maskCard}}</span>
+                                <span class="fs-3 font-semibold" [ngClass]="card.colortext">{{card.date | date:
+                                    'MM/yy'}}</span>
+                            </div>
+                        </div>
+                        <svg style="border-radius: 1rem;" id="visual" viewBox="0 0 900 600"
+                            xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"
+                            class="absolute bottom-0 left-0 w-full h-full z-3">
+                            <rect x="0" y="0" width="900" height="300" [attr.fill]="card.backgroundColor"></rect>
+                            <path
+                                d="M0 400L30 386.5C60 373 120 346 180 334.8C240 323.7 300 328.3 360 345.2C420 362 480 391 540 392C600 393 660 366 720 355.2C780 344.3 840 349.7 870 352.3L900 355L900 601L870 601C840 601 780 601 720 601C660 601 600 601 540 601C480 601 420 601 360 601C300 601 240 601 180 601C120 601 60 601 30 601L0 601Z"
+                                [attr.fill]="card.backgroundDeco" stroke-linecap="round" stroke-linejoin="miter"></path>
+                        </svg>
+                    </div>
+                </div>
+            </ng-template>
+        </p-carousel>
+    </div>
+</div>

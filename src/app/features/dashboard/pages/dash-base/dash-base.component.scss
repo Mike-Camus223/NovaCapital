@@ -1,10 +1,9 @@
-.main-content {
+.prin-container {
     transition: margin-left 0.3s ease;
     margin-left: 0;
-    padding: 20px;
 }
 
-.main-content.sidebar-active {
+.prin-container.sidebar-active {
     margin-left: 30rem;
 }
 
@@ -29,9 +28,59 @@ a.p-ripple {
 }
 
 :root {
-    --teal-800: #00796b; /* Código de color para teal-800 */
+    --teal-800: #00796b;
 }
 
 .container-button {
     width: 9rem;
 }
+
+.h-menu {
+    height: 90px;
+}
+
+.font-23-18 {
+    font-size: 23.18px;
+}
+
+.menu-container {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.main-content {
+    padding: 2rem;
+}
+
+.photo-container {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+.photoUser {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+}
+
+.p-overlaypanel .p-overlaypanel-content {
+    padding: 0.8rem;
+}
+
+.menu-container {
+    z-index: 100;
+}
+
+.shadowMorning {
+    text-shadow: 0 5px 18px #ffcd3662, 0 10px 40px #ffcd364d;
+}
+
+i.shadowAfternoon {
+    text-shadow: 0 5px 18px #aeb9c860, 0 10px 40px #aeb9c83d;
+}
+
+i.shadowNight {
+    text-shadow: 0 5px 18px #c0d2da80, 0 10px 40px #c0d2da81;
+}
+

@@ -1,3 +1,313 @@
-<h1 class="text-white">
-    MIuuuuuuuuuu
-</h1>
+<!-- <div class="grid nested-grid">
+    <div class="col-12 lg:col-4">
+        <div class="grid">
+            <div class="col-12">
+                <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3 h-full">
+                    <div class="p-fluid flex justify-content-between align-items-center">
+                        <h2 class="fs-4">Balance</h2>
+                        <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                            [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+                    </div>
+                    <h2 class="fs-1">$1231231</h2>
+                    <span class="fs-4 font-normal">available</span>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-4"
+                    style="height: auto;">
+                    <div class="p-fluid flex justify-content-between align-items-center">
+                        <h2 class="fs-4">Favourite Transfers</h2>
+                        <p-button class="fs-5" [size]="'small'" [outlined]="true" [severity]="'secondary'"
+                            label="See All" />
+                    </div>
+                    <div class="card">
+                        <p-carousel [value]="photoUser" [numVisible]="4" [numScroll]="1" [circular]="true"
+                            [showIndicators]="false" [responsiveOptions]="responsiveOptions">
+                            <ng-template let-user pTemplate="item">
+                                <div class="flex flex-column justify-content-center align-items-center m-2 p-3">
+                                    <div
+                                        class="user-container flex flex-column justify-content-center align-items-center gap-4 text-center">
+                                        <div class="photo-container flex justify-content-center align-items-center">
+                                            <img [src]="user.photoIcon" [alt]="user.altPhotoUser"
+                                                class="photoUser w-full" [draggable]="user.draggablee" />
+                                        </div>
+                                        <div class="flex flex-column align-items-center">
+                                            <span class="fs-5 font-semibold">{{ user.name }}</span>
+                                            <span class="fs-5 font-semibold">{{ user.surname }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </p-carousel>
+                        <div class="flex p-fluid gap-2 pt-5">
+                            <p-iconField class="w-9" iconPosition="left">
+                                <p-inputIcon styleClass="pi pi-user fs-5" />
+                                <input type="text" class="fs-5" pInputText placeholder="Search Contact" />
+                            </p-iconField>
+                            <p-button label="Search" class="fs-5 w-3"></p-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 lg:col-8 pb-4">
+        <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-4">Finances</h2>
+                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+            </div>
+            <div style="display: block;">
+                <canvas id="chartId" baseChart [data]="lineChartData" [options]="lineChartOptions"
+                    [type]="lineChartType">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grid nested-grid">
+    <div class="col-12 xl:col-9">
+        <div class="grid">
+            <div class="col-12">
+                <div class="grid">
+                    <div class="col-12 md:col-6">
+                        <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+                            <div class="p-fluid flex justify-content-between align-items-center">
+                                <h2 class="fs-4">Expense Distribution</h2>
+                                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+                            </div>
+                            <canvas baseChart [data]="doughnutChartData" [options]="doughnutChartOptions"
+                                [type]="doughnutChartType">
+                            </canvas>
+                        </div>
+                    </div>
+                    <div class="col-12 md:col-6">
+                        <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+                            <div class="p-fluid flex justify-content-between align-items-center">
+                                <h2 class="fs-4">Savings Trend</h2>
+                                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+                            </div>
+                            <canvas baseChart [data]="savingsChartData" [options]="savingsChartOptions"
+                                [type]="savingsChartType">
+                            </canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+                    <div class="p-fluid flex justify-content-between align-items-center">
+                        <h2 class="fs-4">Transactions</h2>
+                        <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                            [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+                    </div>
+                    <app-table-transactions class="p-fluid w-12" style="height: 24.38em;"></app-table-transactions>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 xl:col-3">
+        <div class="bg-appDark-Light shadow-4 border-round-2xl flex flex-column gap-3 scrollable-container">
+            <app-goals-panel style="height: 73.365em;"></app-goals-panel>
+        </div>
+    </div>
+</div> -->
+<div class="p-fluid flex gap-4 pb-3">
+    <div class="w-5.6rem flex align-items-center">
+        <div class="photo-container2">
+            <img [src]="SelectUserPhoto.photoIcon" [alt]="SelectUserPhoto.altPhotoUser" class="photoUserPri w-full" [draggable]="SelectUserPhoto.draggable" />
+        </div>
+    </div>
+    <div class="w-11 flex flex-column">
+        <h1 class="fs-1">
+            Welcome User
+        </h1>
+        <span class="fs-4 text-color-secondary">
+            Your last login was on 13/11/2024 at 10:24 am
+        </span>
+    </div>
+</div>
+<div class="grid nested-grid">
+    <div class="col-4" *ngFor="let dataContainer of statsSystem; let i = index">
+        <div class="bg-appDark-Light shadow-4 p-4 border-round-2xl flex flex-column gap-2 h-full">
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-5">{{dataContainer.title | uppercase}}</h2>
+                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+            </div>
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-1 font-normal">
+                    <ng-container *ngIf="i === 1; else dollarSymbol">
+                        -{{dataContainer.value | currencyArg}}
+                    </ng-container>
+                    <ng-template #dollarSymbol>
+                        {{dataContainer.value | currencyArg}}
+                    </ng-template>
+                </h2>
+                <i class="icon-size pr-4" [class]="dataContainer.iconTitle"
+                    [ngClass]="IconDataColors(i,'IconColor')"></i>
+            </div>
+            <div class="p-fluid flex align-items-center justify-content-between">
+                <div class="border-round w-8rem flex justify-content-center gap-3 align-items-center p-1"
+                    [ngClass]="IconDataColors(i,'BgClass')">
+                    <i class="text-color fs-5" [class]="dataContainer.dataicon"></i>
+                    <span class="text-color fs-4">{{dataContainer.datavalue}}%</span>
+                </div>
+                <div class="flex align-items-bottom line-height-1">
+                    <span class="fs-4 font-normal pr-4">{{dataContainer.avalible}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-4">Finances</h2>
+                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+            </div>
+            <div style="display: block;" class="pt-5">
+                <div class="grid nested-grid">
+                    <div class="col-6">
+                        <div class="bg-appDark-Light flex justify-content-start flex-column gap-3">
+                            <h2 class="font-32 font-semibold">
+                                {{ highestIncome | currencyArg }}
+                            </h2>
+                            <span class="fs-4 font-semibold">
+                                Highest value of deposits for the month
+                            </span>
+                            <span class="fs-4 text-color-secondary font-normal">
+                                Measure the highest deposit of the month and analyze income peaks.
+                                <a routerLink="/">
+                                    <span class="fs-4 font-semibold text-indigo-400 hover:text-indigo-300 transition-linear transition-duration-200">
+                                        Learn more
+                                    </span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="bg-appDark-Light flex justify-content-start flex-column gap-3">
+                            <h3 class="font-32 font-semibold">
+                                -{{highestExpense | currencyArg}}
+                            </h3>
+                            <span class="fs-4 font-semibold">
+                                Highest value of expenses for the month
+                            </span>
+                            <span class="fs-4 text-color-secondary font-normal">
+                                Measure the highest expense of the month and monitor your main outflows.
+                                <a routerLink="/">
+                                    <span class="fs-4 font-semibold text-indigo-400 hover:text-indigo-300 transition-linear transition-duration-200">
+                                        Learn more
+                                    </span>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <canvas class="text-color mt-3" id="chartId" baseChart [data]="lineChartData" [options]="lineChartOptions"
+                    [type]="lineChartType">
+                </canvas>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="grid">
+            <div class="col-12">
+                <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-4">
+                    <div class="p-fluid flex justify-content-between align-items-center">
+                        <h2 class="fs-4">Favourite Transfers</h2>
+                        <p-button class="fs-5" [size]="'small'" [outlined]="true" [severity]="'secondary'"
+                            label="See All" [style]="{'box-shadow':'none','border':'none','background-color':'transparent'}"/>
+                    </div>
+                    <div class="card">
+                        <p-carousel [value]="photoUser" [numVisible]="4" [numScroll]="1" [circular]="true"
+                            [showIndicators]="false" [responsiveOptions]="responsiveOptions">
+                            <ng-template let-user pTemplate="item">
+                                <div class="flex flex-column justify-content-center align-items-center m-2 p-3">
+                                    <div
+                                        class="user-container flex flex-column justify-content-center align-items-center gap-4 text-center">
+                                        <div class="photo-container flex justify-content-center align-items-center">
+                                            <img [src]="user.photoIcon" [alt]="user.altPhotoUser"
+                                                class="photoUser w-full" [draggable]="user.draggablee" />
+                                        </div>
+                                        <div class="flex flex-column align-items-center">
+                                            <span class="fs-5 font-semibold">{{ user.name }}</span>
+                                            <span class="fs-5 font-semibold">{{ user.surname }}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </p-carousel>
+                        <div class="flex p-fluid gap-2 pt-5">
+                            <p-iconField class="w-9" iconPosition="left">
+                                <p-inputIcon styleClass="pi pi-user fs-5" />
+                                <input type="text" class="fs-5" pInputText placeholder="Search Contact" />
+                            </p-iconField>
+                            <p-button label="Search" class="fs-5 w-3"></p-button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="bg-appDark-Light shadow-4 h-full p-5 border-round-2xl flex flex-column">
+                    <app-cards-carousel style="height: 100%;" ></app-cards-carousel>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="bg-appDark-Light shadow-4 p-4 border-round-2xl flex flex-column gap-3">
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-4">Expense Distribution</h2>
+                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+            </div>
+            <div class="flex-grow-1">
+                <canvas baseChart [data]="doughnutChartData" [options]="doughnutChartOptions" [type]="doughnutChartType"></canvas>
+            </div>
+            <div class="flex flex-column fluid">
+                <div *ngFor="let label of doughnutChartData.labels; let i = index">
+                    <div class="flex justify-content-between align-items-center">
+                        <div class="flex gap-3">
+                            <div class="colorbg" [style.backgroundColor]="doughnutColors[i]"></div>
+                            <h3 class="fs-4">{{ label }}</h3>
+                        </div>
+                        <h3 class="fs-4">${{ doughnutChartData.datasets[0].data[i] }}</h3>
+                    </div>
+                    <p-divider [style]="{'margin': '0 0 0.6rem 0', 'padding' : '0.6rem 0 0 0' }"></p-divider>
+                </div>
+            </div>
+        </div>
+    </div>    
+    <div class="col-8">
+        <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-4">Savings Trend</h2>
+                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+            </div>
+            <canvas baseChart [data]="savingsChartData" [options]="savingsChartOptions"
+                [type]="savingsChartType">
+            </canvas>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="bg-appDark-Light shadow-4 p-5 border-round-2xl flex flex-column gap-3">
+            <div class="p-fluid flex justify-content-between align-items-center">
+                <h2 class="fs-4">Transactions</h2>
+                <p-button [outlined]="true" [severity]="'secondary'" icon="pi pi-ellipsis-v fs-5"
+                    [style]="{'box-shadow':'none','border':'none','background-color':'transparent','width':'2rem','height':'2rem'}" />
+            </div>
+            <app-table-transactions class="p-fluid w-12"></app-table-transactions>
+        </div>
+    </div>
+    <div class="col-4">
+        <div class="bg-appDark-Light shadow-4 border-round-2xl flex flex-column gap-3 scrollable-container">
+            <app-goals-panel></app-goals-panel>
+        </div>
+    </div>
+</div>

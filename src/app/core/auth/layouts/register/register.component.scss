@@ -1,3 +1,191 @@
+.start-pri {
+    height: 64px;
+    display: flex;
+    align-items: center;
+}
+
+.marginNav {
+    margin-left: 27px;
+    margin-right: 27px;
+}
+
+.bg-login-button {
+    cursor: pointer;
+    background-color: #264653;
+
+    &:hover {
+        background-color: #172c35;
+    }
+
+    &:active {
+        background-color: #213d47;
+    }
+}
+
+.text-a-login {
+    cursor: pointer;
+    color: #264653;
+
+    &:hover {
+        color: #355a69;
+    }
+
+    &:active {
+        color: rgb(44, 78, 90);
+    }
+}
+
 .bg-login {
-    background-color: #00384d;
+    background-color: #264653;
+}
+
+.text-login {
+    color: #264653;
+}
+
+.ContainerCollapseHeight {
+    height: calc(100vh - 64px);
+}
+
+.toucheye {
+    cursor: pointer;
+}
+
+.title-size {
+    font-size: 36px;
+}
+
+.font-title-log {
+    font-size: 1.65rem;
+}
+
+.imgCarousel {
+    width: 50rem;
+    height: 55rem;
+}
+
+.font-subtitle {
+    font-size: 18px;
+}
+
+.indicator {
+    &:active {
+        background-color: aquamarine;
+    }
+}
+
+.indiActive {
+    transition: all .2s linear;
+
+    &:active {
+        width: 25px;
+    }
+}
+
+::ng-deep .p-stepper .p-stepper-panels {
+    padding: 0;
+}
+
+::ng-deep .p-stepper .p-stepper-header {
+    padding: 0;
+}
+
+::ng-deep .p-calendar input:first-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border-radius: 0;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+::ng-deep .p-datepicker {
+    overflow: visible !important;
+}
+
+::ng-deep .p-input-icon-right>i {
+    top: 45%;
+}
+
+::ng-deep .p-component {
+    font-size: 1.25rem;
+}
+
+::ng-deep .p-datepicker table {
+    font-size: 1.25rem;
+}
+
+.stepper-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.steps {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 350px;
+}
+
+.step {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.step.active {
+    left: 0;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.nav-button {
+    max-width: 30%;
+    width: 100%;
+    height: 10px;
+    background: #2A9D8F;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.nav-button:disabled {
+    background: #ccc;
+    cursor: default;
+}
+
+.next-button {
+    padding: 10px 20px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.next-button:hover {
+    background: #218838;
 }

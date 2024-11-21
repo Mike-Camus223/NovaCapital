@@ -1,9 +1,16 @@
 @import "./scss/reset/reset";
 @import "./scss/variables/variables";
 @import "./scss/fonts/fontSizes";
+@import "./scss/backgroundsCustom/background-color-custom";
 
 body {
     transition: background-color 0.3s ease;
+}
+
+.bg-appDark-Light {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .lara-light-blue {
@@ -16,18 +23,6 @@ body {
     color: #ffffff; 
 }
 
-.lara-light-blue h1, 
-.lara-light-blue h2, 
-.lara-light-blue h3, 
-.lara-light-blue h4, 
-.lara-light-blue h5, 
-.lara-light-blue h6, 
-.lara-light-blue p,
-.lara-light-blue span,
-.lara-light-blue a {
-    color: #111827;
-}
-
 .lara-dark-blue h1, 
 .lara-dark-blue h2, 
 .lara-dark-blue h3, 
@@ -36,7 +31,9 @@ body {
 .lara-dark-blue h6, 
 .lara-dark-blue p,
 .lara-dark-blue span,
-.lara-dark-blue a {
+.lara-dark-blue a
+.lara-dark-blue apx-chart,
+.lara-dark-blue .chart {
     color: #ffffff; 
 }
 

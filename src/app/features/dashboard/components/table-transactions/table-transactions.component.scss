@@ -1,0 +1,28 @@
+
+::ng-deep .p-tag .pi {
+    font-size: 1.3rem;
+}
+
+.header-cell {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+::ng-deep .p-paginator {
+    font-size: 1.25rem;
+}
+
+::ng-deep .p-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+
+::ng-deep .lara-dark-blue .p-tag span {
+    color: #111827;
+}
+
+::ng-deep .lara-light-blue .p-tag span {
+    color: #fff;
+}

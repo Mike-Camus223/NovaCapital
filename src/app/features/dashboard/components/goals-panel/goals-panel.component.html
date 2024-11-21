@@ -1,0 +1,29 @@
+<div>
+    <div class="p-fluid flex justify-content-between p-5 align-items-center sticky top-0 z-pri bg-appDark-Light">
+        <h2 class="fs-4">My Goals</h2>
+        <button type="button"
+            class="bg-black-alpha-90 border-round-xl border-0 px-3 py-2 text-blue-50 fs-4 border-1 border-solid border-round cursor-pointer transition-all transition-duration-200 hover:bg-black-alpha-70 active:bg-black-alpha-80">Add</button>
+    </div>
+    <div class="flex flex-column gap-4 p-2">
+        <div class="pl-2 pr-3 py-2 border-round-lg" *ngFor="let dataG of goalsSystem; let i = index">
+            <div class="p-fluid flex gap-3">
+                <div class="w-6rem p-4 bg-black-alpha-10 flex align-items-center justify-content-center border-round-lg">
+                    <i [ngClass]="dataG.icon" class="fs-1 text-color"></i>
+                </div>
+                <div class="w-10 flex flex-column justify-content-evenly">
+                    <div class="p-fluid flex justify-content-between">
+                        <h3 class="fs-4">
+                            {{dataG.name}}
+                        </h3>
+                        <h3 class="fs-4">
+                            {{dataG.percentage}}%
+                        </h3>
+                    </div>
+                    <div class="card text-color">
+                        <p-progressBar [value]="dataG.percentage" [showValue]="false"></p-progressBar>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
