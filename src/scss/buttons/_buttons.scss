@@ -1,0 +1,140 @@
+$button-bg: #13F9C7;
+$hover-bg1: #7f2fad;
+$hover-bg2: #F94C67;
+$hover-bg3: rgb(45, 204, 205);
+$hover-secti2card: #776cbb;
+$focus-outline1: #6A9C89;
+$focus-outline2: #374a9e;
+$focus-outline3: #3e398a;
+$focus-transparent: transparent;
+
+
+.buttonPri {
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    background-color: $button-bg;
+
+    span {
+        position: relative;
+        z-index: 1;
+        transition: color 0.4s ease-in-out;
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -5px;
+        left: 100%;
+        width: calc(100% + 10px);
+        height: calc(100% + 10px);
+        transition: all 0.4s ease-in-out;
+        z-index: 0;
+    }
+
+    &:hover::before,
+    &:focus:hover::before {
+        left: -5px;
+    }
+
+    &:hover span,
+    &:focus:hover span {
+        color: #fff;
+    }
+
+    &:hover,
+    &:focus:hover {
+        color: #fff;
+    }
+
+    &:focus {
+        transition: box-shadow 0.4s ease-in-out;
+    }
+}
+
+.buttonPri1 {
+    &::before {
+        background-color: $hover-bg1;
+    }
+
+    &:hover::before {
+        background-color: $hover-bg1;
+    }
+
+    &:hover:focus {
+        box-shadow: 0 0 0 2px $focus-outline1, 0 0 0 4px $hover-bg1, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $focus-outline1, 0 0 0 4px $button-bg, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}
+
+.buttonPri2 {
+    &::before {
+        background-color: $hover-bg2;
+    }
+
+    &:hover::before {
+        background-color: $hover-bg2;
+    }
+
+    &:hover:focus {
+        box-shadow: 0 0 0 2px $focus-outline2, 0 0 0 4px $hover-bg2, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $focus-outline2, 0 0 0 4px $button-bg, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}
+
+.buttonPri3 {
+    background-color: rgb(0, 182, 182); 
+    color: #fff;
+
+    &::before {
+        background-color: $hover-bg3;
+    }
+
+    &:hover::before {
+        background-color: $hover-bg3;
+    }
+
+    &:hover:focus {
+        box-shadow: 0 0 0 2px $focus-outline3, 0 0 0 4px $hover-bg3, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $focus-outline3, 0 0 0 4px rgb(2, 132, 132), 0 1px 2px 0 black; 
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}
+
+.buttonSectionCards2 {
+    background-color: #9182f8;
+    color: #fff;
+
+    &::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover:focus {
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}

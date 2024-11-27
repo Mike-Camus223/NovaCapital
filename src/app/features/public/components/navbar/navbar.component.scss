@@ -9,7 +9,7 @@
 }
 
 .bg-navbar {
-    background-color: #001F3F;
+    background-color: #264653;
     backdrop-filter: blur(10px);
 }
 
@@ -54,14 +54,14 @@
     transition: height 0.3s ease, padding 0.3s ease, visibility 0.3s;
     visibility: hidden;
     position: fixed;
-    top: 80px;
+    top: 85px;
     left: 0;
     width: 100%;
     z-index: 5;
 }
 
 .collapse-container.open {
-    height: calc(100vh - 80px);
+    height: calc(100vh - 85px);
     visibility: visible;
     overflow-y: hidden;
 }

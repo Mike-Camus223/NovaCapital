@@ -5,11 +5,13 @@ import { FormsModule } from '@angular/forms';
 import { MaskCardPipe } from './pipes/mask-card.pipe';
 import { CurrencyArgPipe } from './pipes/currency-arg.pipe';
 import { UiModule } from './ui.module';
+import { ButtonPriDirective } from './directives/button-pri.directive';
 
 @NgModule({
   declarations: [
     MaskCardPipe,
-    CurrencyArgPipe
+    CurrencyArgPipe,
+    ButtonPriDirective
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { UiModule } from './ui.module';
     FormsModule,
     MaskCardPipe,
     CurrencyArgPipe,
-    UiModule
+    UiModule,
+    ButtonPriDirective
   ],
 })
 export class SharedModule { }

@@ -2,6 +2,7 @@
 @import "./scss/variables/variables";
 @import "./scss/fonts/fontSizes";
 @import "./scss/backgroundsCustom/background-color-custom";
+@import "./scss/buttons/buttons";
 
 body {
     transition: background-color 0.3s ease;
@@ -12,6 +13,11 @@ body {
     color: var(--text-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+.bg-main {
+    background-color: #ffffff;
+}
+
 
 .lara-light-blue {
     background-color: #ffffff;
@@ -55,4 +61,8 @@ body {
     &:hover {
         background-color: #5b6f81be;
     }
+}
+
+.border-round-pill {
+    border-radius: 50px;
 }

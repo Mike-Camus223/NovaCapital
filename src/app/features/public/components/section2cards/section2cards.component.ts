@@ -7,6 +7,7 @@ interface datanextcards {
   img: string;
   button: string;
   alrImg: string;
+  buttonStyle: 'buttonSectionCards2',
 }
 
 interface DataTwo {
@@ -32,6 +33,7 @@ export class Section2cardsComponent implements OnInit {
       img: 'assets/images/minicard.jpg',
       button: 'Explora nuestras iniciativas',
       alrImg: 'Es el momento',
+      buttonStyle: 'buttonSectionCards2',
     },
     {
       title: 'Refiere y Gana',
@@ -39,6 +41,7 @@ export class Section2cardsComponent implements OnInit {
       img: 'assets/images/minicard2.jpg',
       button: 'Empieza a referir',
       alrImg: 'Refiere y Gana',
+      buttonStyle: 'buttonSectionCards2',
     },
     {
       title: 'Descubre NovaPlus+',
@@ -46,6 +49,7 @@ export class Section2cardsComponent implements OnInit {
       img: 'assets/images/minicard3.jpg',
       button: 'Conoce NovaPlus+',
       alrImg: 'Descubre NovaPlus+',
+      buttonStyle: 'buttonSectionCards2',
     },
   ];
 

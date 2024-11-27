@@ -3,7 +3,7 @@
 }
 
 .bg-cards {
-    background-color: #213d57;
+    background-color: #21285f;
 }
 
 .img-card {
@@ -53,17 +53,10 @@
 .image-container {
     width: 100%;
     height: 380px;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
 }
 
 .img-item {
     width: 100%;
     height: 100%;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    object-fit: cover;
 }

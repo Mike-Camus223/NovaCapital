@@ -26,6 +26,7 @@ import { MenuModule } from 'primeng/menu';
 import { PasswordModule } from 'primeng/password';
 import { StepperModule } from 'primeng/stepper';
 import { CalendarModule } from 'primeng/calendar';
+import { InputMaskModule } from 'primeng/inputmask';
 
 
 
@@ -60,7 +61,8 @@ import { CalendarModule } from 'primeng/calendar';
     MenuModule,
     PasswordModule,
     StepperModule,
-    CalendarModule 
+    CalendarModule,
+    InputMaskModule
   ],
   exports: [
     CommonModule,
@@ -89,7 +91,8 @@ import { CalendarModule } from 'primeng/calendar';
     MenuModule,
     PasswordModule,
     StepperModule,
-    CalendarModule 
+    CalendarModule,
+    InputMaskModule 
   ]
 })
 export class UiModule { }

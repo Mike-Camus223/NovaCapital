@@ -47,7 +47,7 @@ export class CardspublicgridComponent implements OnInit {
       minititle: 'App de Confianza',
       title: 'Tu Banca en la Palma de Tu Mano',
       description: 'Realiza operaciones bancarias rápidamente desde cualquier lugar con la app de NovaCapital.',
-      firtsPhoto: 'assets/images/8.jpg',
+      firtsPhoto: 'assets/images/3.jpg',
       altfirts: 'Innovación Financiera',
     },
   ]

@@ -1,15 +1,15 @@
-<div class="container-fluid mt-4 d-flex justify-content-center">
-    <div class="col-lg-8">
-        <div class="row row-cols-1 row-cols-md-2 g-3">
-            <div class="col" *ngFor="let dataitem of CardData; let i = index">
-                <div class="card border-0 bg-cards rounded-5">
-                    <div class="card-body card-container-mid d-flex flex-column">
+<div class="grid grid-nogutter justify-content-center flex align-items-center">
+    <div class="col-9">
+        <div class="grid grid-nogutter">
+            <div class="col-6 p-4" *ngFor="let dataitem of CardData; let i = index">
+                <div class="card border-0 bg-cards border-round-3xl">
+                    <div class="card-container-mid flex flex-column">
                         <p class="mini-title-letter text-purple m-0">{{dataitem.minititle}}</p>
                         <h5 class="card-title text-white letter-title-card m-0">{{dataitem.title}}</h5>
                         <p class="card-text font-p m-0">{{dataitem.description}}</p>
                     </div>
-                    <div class="image-container">
-                        <img [src]="dataitem.firtsPhoto" [alt]="dataitem.altfirts" class="img-item">
+                    <div class="image-container border-round-bottom-3xl">
+                        <img [src]="dataitem.firtsPhoto" draggable="false" [alt]="dataitem.altfirts" class="img-item border-round-bottom-3xl">
                     </div>
                 </div>
             </div>

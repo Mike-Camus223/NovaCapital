@@ -1,5 +1,5 @@
-<hr class="text-white fs-3">
-<div class="container-fluid mt-4 bg-footer">
+<!-- <hr class="text-white fs-3">
+<div class="p-fluid mt-4 bg-footer">
     <div class="row justify-content-center">
         <div class="col-3 h-90">
             <ul class="m-0 h-90 p-0 d-flex justify-content-center align-items-center gap-icon">
@@ -21,6 +21,40 @@
 ¿                    </a>
                 </li>
             </ul>
+        </div>
+    </div>
+</div>  -->
+
+<div class="grid grid-nogutter bg-footer mt-4">
+    <div class="w-12">
+        <div class="grid grid-nogutter">
+            <div class="col-3">
+                <div class="h-90">
+                    <ul class="m-0 h-full flex justify-content-center align-items-center gap-icon">
+                        <li *ngFor="let icondata of datafooterIcon.slice(0, 4); let i = index">
+                            <a [href]="icondata.url" class="nav-link">
+                                <i [ngClass]="icondata.icon" class="fs-1 text-white hover:text-white-alpha-70 transition-linear transition-duration-200"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="flex align-items-center  justify-content-center h-full">
+                    <h5 class="font-d text-white">{{footerDataD}}</h5>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="h-90">
+                    <ul class="m-0 h-full flex justify-content-center align-items-center gap-icon">
+                        <li *ngFor="let icondata of datafooterIcon.slice(4); let i = index">
+                            <a [href]="icondata.url" class="nav-link">
+                                <i [ngClass]="icondata.icon" class="fs-1 text-white hover:text-white-alpha-70 transition-linear transition-duration-200"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
