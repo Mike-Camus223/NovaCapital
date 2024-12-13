@@ -11,6 +11,9 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { Section2cardsComponent } from './components/section2cards/section2cards.component';
 import { SharedModule } from '../../shared/shared.module';
 import { AuthModule } from '../../core/auth/auth.module';
+import { DoblepageComponent } from './components/doblepage/doblepage.component';
+import { SectionHelpComponent } from './components/section-help/section-help.component';
+import { TriplePageComponent } from './components/triple-page/triple-page.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { AuthModule } from '../../core/auth/auth.module';
     CarouselcardsComponent,
     FooterComponent,
     NavbarComponent,
-    Section2cardsComponent
+    Section2cardsComponent,
+    DoblepageComponent,
+    SectionHelpComponent,
+    TriplePageComponent
   ],
   imports: [
     CommonModule,

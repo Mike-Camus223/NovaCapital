@@ -1,0 +1,80 @@
+<div class="p-fluid" *ngFor="let itemDataDouble of generalDoubleData; let i = index">
+    <div class="grid grid-nogutter" [ngClass]="itemDataDouble.pages.BackgroundPages"
+        *ngIf="itemDataDouble.pages.pagesDouble === 'PageDouble1' && itemDataDouble.pages.pageActive">
+        <div class="col-12 lg:col-6 xl:col-6 md:col-12 sm:col-12 image-height">
+            <div class="h-full diagonal">
+                <div class="imagedouble">
+                    <img [src]="itemDataDouble.imagenBackground" [alt]="itemDataDouble.title"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 lg:col-6 xl:col-6 md:col-12 sm:col-12 height-40">
+            <div class="h-full w-12 flex justify-content-center align-items-center">
+                <div
+                    class="w-10 lg:w-7 xl:w-7 md:w-9 sm:w-10 lg:gap-6 xl:gap-6 md:gap-5 sm:gap-5 flex flex-column gap-5 Updiv">
+                    <h2 class="fs-3 lx:fs-2 lg:fs-2 md:fs-3 sm:fs-3 text-white">
+                        {{itemDataDouble.title}}
+                    </h2>
+                    <p class="fs-4 lx:fs-3 lg:fs-3 md:fs-4 sm:fs-4 text-white">
+                        {{itemDataDouble.info}}
+                    </p>
+                    <button class="fs-4 w-full md:w-6 buttonPri p-3 border-round-pill" [ngClass]="'CommonButton'">
+                        <span>{{itemDataDouble.button}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-nogutter" [ngClass]="itemDataDouble.pages.BackgroundPages"
+        *ngIf="itemDataDouble.pages.pagesDouble === 'PageDouble2' && itemDataDouble.pages.pageActive">
+        <div class="col-12 lg:col-6 xl:col-6 md:col-12 sm:col-12 height-40">
+            <div class="h-full w-12 flex justify-content-center align-items-center">
+                <div
+                    class="w-10 lg:w-7 xl:w-7 md:w-9 sm:w-10 lg:gap-6 xl:gap-6 md:gap-5 sm:gap-5 flex flex-column gap-5 Updiv2">
+                    <h2 class="fs-3 lx:fs-2 lg:fs-2 md:fs-3 sm:fs-3 text-white">
+                        {{itemDataDouble.title}}
+                    </h2>
+                    <p class="fs-4 lx:fs-3 lg:fs-3 md:fs-4 sm:fs-4 text-white">
+                        {{itemDataDouble.info}}
+                    </p>
+                    <button class="fs-4 w-full md:w-6 buttonPri p-3 border-round-pill" [ngClass]="'CommonButtonVar2'">
+                        <span>{{itemDataDouble.button}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 lg:col-6 xl:col-6 md:col-12 sm:col-12 image-height">
+            <div class="h-full diagonal2">
+                <div class="imagedouble">
+                    <img [src]="itemDataDouble.imagenBackground" [alt]="itemDataDouble.title"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grid grid-nogutter" [ngClass]="itemDataDouble.pages.BackgroundPages"
+        *ngIf="itemDataDouble.pages.pagesDouble === 'PageDouble3' && itemDataDouble.pages.pageActive">
+        <div class="col-12 lg:col-6 xl:col-6 md:col-12 sm:col-12 image-height">
+            <div class="h-full diagonal">
+                <div class="imagedouble">
+                    <img [src]="itemDataDouble.imagenBackground" [alt]="itemDataDouble.title"/>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 lg:col-6 xl:col-6 md:col-12 sm:col-12 height-40">
+            <div class="h-full w-12 flex justify-content-center align-items-center">
+                <div
+                    class="w-10 lg:w-7 xl:w-7 md:w-9 sm:w-10 lg:gap-6 xl:gap-6 md:gap-5 sm:gap-5 flex flex-column gap-5 Updiv">
+                    <h2 class="fs-3 lx:fs-2 lg:fs-2 md:fs-3 sm:fs-3 text-white">
+                        {{itemDataDouble.title}}
+                    </h2>
+                    <p class="fs-4 lx:fs-3 lg:fs-3 md:fs-4 sm:fs-4 text-white">
+                        {{itemDataDouble.info}}
+                    </p>
+                    <button class="fs-4 w-full md:w-6 buttonPri p-3 border-round-pill" [ngClass]="'CommonButton'">
+                        <span>{{itemDataDouble.button}}</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

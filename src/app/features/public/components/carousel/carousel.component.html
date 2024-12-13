@@ -1,102 +1,94 @@
-<div class="grid maximum-horizontal grid-nogutter">
-  <div class="col-12">
-    <div class="w-12">
-      <p-carousel [value]="firtsCarousel" [numVisible]="1" [numScroll]="1" [showNavigators]="false"
-        [autoplayInterval]="5000" [showIndicators]="false">
-        <ng-template let-item pTemplate="item">
-          <div *ngIf="item.Pages === 'Page1'" class="grid grid-nogutter h-carousel"
-            [ngClass]="[item.style.backgroundClass]">
-            <div class="col-6 flex justify-content-end">
-              <div class="flex align-items-center w-10 h-full" style="transform: translateY(-10%);">
-                <div class="flex flex-column gap-5 px-7">
-                  <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
-                  <h2 class="title text-white">{{ item.title }}</h2>
-                  <p class="fs-3 text-white">{{ item.infor }}</p>
-                  <div class="mt-4 ">
-                    <button routerLink="#" class="w-5 border-round-pill border-none p-3 buttonPri"
-                      (mouseenter)="buttonhover = true" (mouseleave)="buttonhover = false"
-                      [ngClass]="item.style.buttonStyle">
-                      <div class="d-flex defa align-items-center justify-content-center">
-                        <span class="d-flex justify-content-center align-items-center gap-4">
-                          <h3 class="fs-4">{{ buttonhover? 'Ver más' : 'Nuestros servicios'}} <i *ngIf="!buttonhover"
-                              class="fa-solid fa-chevron-right fs-5"></i></h3>
-                        </span>
-                      </div>
-                    </button>
+<div class="carousel">
+  <div class="carousel-inner" [style.transform]="transformStyle">
+    <div class="carousel-item" *ngFor="let item of firtsCarousel" [ngClass]="item.style.backgroundClass">
+      <div class="grid grid-nogutter h-carousel shadow-carousel">
+        <div *ngIf="item.Pages === 'Page1'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 flex justify-content-center xl:justify-content-end lg:justify-content-end md:justify-content-center sm:justify-content-center">
+          <div class="flex align-items-center xl:w-10 lg:w-10 md:w-12 sm:w-12 w-12 h-full moveY">
+            <div class="flex flex-column gap-5 xl:px-7 lg:px-7 md:px-5 sm:px-4 px-4">
+              <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
+              <h2 class="title text-white">{{ item.title }}</h2>
+              <p class="fs-3 text-white">{{ item.infor }}</p>
+              <div class="mt-4">
+                <button class="w-5 border-round-pill border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                  <div class="d-flex defa align-items-center justify-content-center">
+                    <span class="d-flex justify-content-center align-items-center gap-4">
+                      <h3 class="fs-4">
+                        {{ buttonhover ? 'Ver más' : 'Nuestros servicios' }}
+                        <i *ngIf="!buttonhover" class="fa-solid fa-chevron-right fs-5"></i>
+                      </h3>
+                    </span>
                   </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="flex justify-content-start align-items-center h-full">
-                <img [src]="item.firtsPhoto" [alt]="item.altfirts" class="w-full" />
+                </button>
               </div>
             </div>
           </div>
-          <div *ngIf="item.Pages === 'Page2'" class="h-carousel grid grid-nogutter"
-            [ngClass]="[item.style.backgroundClass]">
-            <div class="col-7 flex justify-content-center">
-              <div class="flex align-items-center w-8 h-full" style="transform: translateY(-10%);">
-                <div class="flex flex-column gap-5 px-4">
-                  <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
-                  <h2 class="title text-white">{{ item.title }}</h2>
-                  <p class="fs-3 text-white">{{ item.infor }}</p>
-                  <div class="flex mt-4 gap-4">
-                    <button class="fs-4 border-round-pill w-3 border-none p-3 buttonPri"
-                      [ngClass]="item.style.buttonStyle">
-                      <span>Learn More</span>
-                    </button>
-                    <button class="fs-4 border-round-pill w-3 border-none p-3 buttonPri"
-                      [ngClass]="item.style.buttonStyle">
-                      <span>Tutorial</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-5 separationb2">
-              <div class="flex" [ngClass]="[item.style.backgroundClass]"
-                [style.backgroundImage]="'url(' + item.firtsPhoto + ')'">
-
+        </div>
+        <div *ngIf="item.Pages === 'Page1'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12">
+          <div class="flex justify-content-center xl:justify-content-start lg:justify-content-start md:justify-content-center sm:justify-content-center align-items-center h-full">
+            <img [src]="item.firtsPhoto" draggable="false" [alt]="item.altfirts" class="w-full firts-image" />
+          </div>
+        </div>
+        <div *ngIf="item.Pages === 'Page2'" class="col-12 xl:col-7 lg:col-7 md:col-12 sm:col-12 flex justify-content-center">
+          <div class="flex align-items-center xl:w-8 lg:w-8 md:w-12 sm:w-12 w-12 h-full moveY">
+            <div class="flex flex-column gap-5 xl:px-4 lg:px-4 md:px-5 sm:px-4 px-4">
+              <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
+              <h2 class="title text-white">{{ item.title }}</h2>
+              <p class="fs-3 text-white">{{ item.infor }}</p>
+              <div class="flex mt-4 gap-4">
+                <button class="fs-4 border-round-pill xl:w-3 lg:w-3 md:w-4 sm:w-4 w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                  <span>Learn More</span>
+                </button>
+                <button class="fs-4 border-round-pill xl:w-3 lg:w-3 md:w-4 sm:w-4 w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                  <span>Tutorial</span>
+                </button>
               </div>
             </div>
           </div>
-          <div *ngIf="item.Pages === 'Page3'" class="h-carousel grid grid-nogutter" [ngClass]="[item.style.backgroundClass]">
-            <div class="col-6 flex justify-content-end">
-              <div class="flex align-items-center w-10 h-full" style="transform: translateY(-10%);">
-                <div class="flex flex-column gap-5 px-7">
-                  <p class="fs-4 title-color ">{{ item.subtitle | uppercase }}</p>
-                  <h2 class="title text-white">{{ item.title }}</h2>
-                  <div class="flex flex-column">
-                    <p class="fs-3 text-white ">{{ item.infor }}</p>
-                  </div>
-                  <ul class="list-none listCarousel px-5">
-                    <li class="itemListCarousel" *ngIf="item.itemlist.dataItem">
-                      <i class="pi pi-check text-teal-600 font-bold fs-4 pt-2"></i>
-                      <span class="fs-3 text-white">{{item.itemlist.dataItem }}</span>
-                    </li>
-                    <li class="itemListCarousel" *ngIf="item.itemlist.dataItem2">
-                      <i class="pi pi-check text-teal-600 font-bold fs-4 pt-2"></i>
-                      <span class="fs-3 text-white">{{item.itemlist.dataItem2 }}</span>
-                    </li>
-                    <li class="itemListCarousel" *ngIf="item.itemlist.dataItem3">
-                      <i class="pi pi-check text-teal-600 font-bold fs-4 pt-2"></i>
-                      <span class="fs-3 text-white">{{item.itemlist.dataItem3 }}</span>
-                    </li>
-                  </ul>
-                  <button class="fs-4 border-round-pill w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
-                    <span>Solicitar Tarjeta</span>
-                  </button>
-                </div>
+        </div>
+        <div *ngIf="item.Pages === 'Page2'" class="col-12 xl:col-5 lg:col-5 md:col-12 sm:col-12 separationb2">
+          <div class="flex h-full">
+            <img [src]="item.firtsPhoto" draggable="false" [alt]="item.altfirts" class="bg-image"/>
+          </div>
+        </div>
+        <div *ngIf="item.Pages === 'Page3'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 flex justify-content-end">
+          <div class="flex align-items-center xl:w-10 lg:w-10 md:w-12 sm:w-12 w-12 h-full moveThirdY">
+            <div class="flex flex-column gap-5 xl:px-7 lg:px-7 md:px-5 sm:px-4 px-4">
+              <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
+              <h2 class="title text-white">{{ item.title }}</h2>
+              <div class="flex flex-column">
+                <p class="fs-3 text-white">{{ item.infor }}</p>
+                <ul class="list-none listCarousel px-5">
+                  <li *ngIf="item.itemlist.dataItem" class="itemListCarousel">
+                    <i class="pi pi-check text-teal-600 font-bold fs-4 pt-2"></i>
+                    <span class="fs-3 text-white">{{ item.itemlist.dataItem }}</span>
+                  </li>
+                  <li *ngIf="item.itemlist.dataItem2" class="itemListCarousel">
+                    <i class="pi pi-check text-teal-600 font-bold fs-4 pt-2"></i>
+                    <span class="fs-3 text-white">{{ item.itemlist.dataItem2 }}</span>
+                  </li>
+                  <li *ngIf="item.itemlist.dataItem3" class="itemListCarousel">
+                    <i class="pi pi-check text-teal-600 font-bold fs-4 pt-2"></i>
+                    <span class="fs-3 text-white">{{ item.itemlist.dataItem3 }}</span>
+                  </li>
+                </ul>
               </div>
-            </div>
-            <div class="col-6 separationb2">
-              <div class="flex" [ngClass]="[item.style.backgroundClass]" [style.backgroundImage]="'url(' + item.firtsPhoto + ')'">
-              </div>
+              <button class="fs-4 border-round-pill w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                <span>Solicitar Tarjeta</span>
+              </button>
             </div>
           </div>
-        </ng-template>
-      </p-carousel>
+        </div>
+        <div *ngIf="item.Pages === 'Page3'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 separationb2">
+          <div class="flex h-full">
+            <img [src]="item.firtsPhoto" draggable="false" [alt]="item.altfirts" class="bg-image"/>
+          </div>
+        </div>
+      </div>
     </div>
+  </div>
+  <div class="indicators">
+    <span *ngFor="let _ of firtsCarousel; let i = index" class="indicator" [class.active]="currentIndex === i"
+      (click)="goToSlide(i)">
+    </span>
   </div>
 </div>

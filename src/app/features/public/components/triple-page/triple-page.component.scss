@@ -1,0 +1,67 @@
+.tripe-he {
+    height: 40rem;
+}
+
+.tripe-he2 {
+    height: 48rem;
+}
+
+.bg-triplecards {
+    background-color: #21285f;
+}
+
+.bg-cardscaru {
+    background-color: #111849;
+}
+
+.bg-triplecards2 {
+    background-color: #E8EAF6;
+}
+
+.bg-cardscaru2 {
+    background-color: #21285f;
+}
+
+.wid {
+    width: 60%;
+}
+
+.fs-title {
+    font-size: 36px;
+}
+
+@media (max-width: 992px) {
+    .fs-title {
+        font-size: 2.4rem;
+    }
+
+    .tripe-he {
+        height: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .tripe-he2 {
+        height: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+}
+
+@media (max-width:768px) {
+    .carouselPadding {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .infodivRespo {
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 1383px) and (min-width: 992px) {
+    .lg\:w-9 {
+      width: 90% !important; 
+    }
+  }

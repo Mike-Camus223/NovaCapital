@@ -1,5 +1,4 @@
-
-<header class="sticky top-0 overflow-hidden z-1 w-12">
+<header class="sticky top-0 overflow-hidden z-5 w-12">
     <app-navbar></app-navbar>
 </header>
 <section>
@@ -8,9 +7,25 @@
 <section>
     <app-cardspublicgrid></app-cardspublicgrid>
 </section>
- <section>
+<section>
     <app-section2cards></app-section2cards>
+</section>
+<section>
+    <app-doblepage [ShowPage]="'PageDouble1'"></app-doblepage>
+</section>
+<section>
+    <app-triple-page [ShowTriplePage]="['PageTriple1']" ></app-triple-page>
+</section>
+<section>
+    <app-doblepage [ShowPage]="'PageDouble2'"></app-doblepage>
+</section>
+<section>
+    <app-triple-page [ShowTriplePage]="['PageTriple2']" ></app-triple-page>
+</section>
+<section>
+    <app-section-help></app-section-help>
 </section>
 <footer>
     <app-footer></app-footer>
-</footer>  
+</footer>
+

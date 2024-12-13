@@ -17,6 +17,8 @@ export class NavbarComponent {
   menuVisible: boolean = false;
   dropdownOpen = false;
   isMobile = false;
+  isScrolled = false; // Nueva variable para rastrear el estado de scroll
+
 
   buttonAuthSystems: ButtonAuth[] = [
     {
@@ -36,6 +38,12 @@ export class NavbarComponent {
   @HostListener('window:resize', ['$event'])
   onResize() {
     this.checkMobileView();
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    const scrollPosition = window.scrollY || window.pageYOffset;
+    this.isScrolled = scrollPosition > 0;
   }
 
   ngOnInit() {

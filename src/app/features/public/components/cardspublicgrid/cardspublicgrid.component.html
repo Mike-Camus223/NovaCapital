@@ -1,15 +1,18 @@
-<div class="grid grid-nogutter justify-content-center flex align-items-center">
-    <div class="col-9">
+<div class="grid grid-nogutter justify-content-center align-items-center">
+    <div class="col-12 xl:col-9 lg:col-12 md:col-12 sm:col-12">
         <div class="grid grid-nogutter">
-            <div class="col-6 p-4" *ngFor="let dataitem of CardData; let i = index">
-                <div class="card border-0 bg-cards border-round-3xl">
-                    <div class="card-container-mid flex flex-column">
-                        <p class="mini-title-letter text-purple m-0">{{dataitem.minititle}}</p>
-                        <h5 class="card-title text-white letter-title-card m-0">{{dataitem.title}}</h5>
-                        <p class="card-text font-p m-0">{{dataitem.description}}</p>
+            <div class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 p-4" *ngFor="let dataitem of CardData; let i = index">
+                <div class="card border-0 bg-cards border-round-3xl flex flex-column h-full">
+                    <div class="p-56 flex flex-column gap-4" style="flex: 1;">
+                        <p class="mini-title-letter text-purple m-0">{{ dataitem.minititle }}</p>
+                        <h5 class="card-title text-white letter-title-card m-0">{{ dataitem.title }}</h5>
+                        <p class="card-text font-p m-0">{{ dataitem.description }}</p>
                     </div>
                     <div class="image-container border-round-bottom-3xl">
-                        <img [src]="dataitem.firtsPhoto" draggable="false" [alt]="dataitem.altfirts" class="img-item border-round-bottom-3xl">
+                        <img [src]="dataitem.firtsPhoto" 
+                             [alt]="dataitem.altfirts" 
+                             class="img-item border-round-bottom-3xl w-full" 
+                             draggable="false">
                     </div>
                 </div>
             </div>

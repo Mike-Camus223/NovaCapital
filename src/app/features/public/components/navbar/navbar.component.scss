@@ -1,15 +1,46 @@
-.centered {
-    height: 80px;
+.mainNavi {
+    height: 9rem;
+    transition: height 0.2s ease;
+
+    &.transformScroll {
+        height: 6.5rem;
+        padding-top: 0.5rem;
+    }
+}
+
+.brand {
+    font-size: 2.5rem;
     display: flex;
     align-items: center;
+    gap: 0.5rem;
+    transition: font-size 0.2s ease, ;
+
+    i {
+        font-size: 2rem;
+        transition: font-size 0.2s ease;
+    }
 }
+
+.mainNavi.transformScroll .brand {
+    font-size: 1.75rem;
+    gap: 0.3rem;
+
+    i {
+        font-size: 1.5rem;
+    }
+}
+
 
 .top-navbardrop {
     top: 9%;
 }
 
+.mobileCol {
+    padding: 0;
+}
+
 .bg-navbar {
-    background-color: #264653;
+    background-color: #111849bb;
     backdrop-filter: blur(10px);
 }
 
@@ -51,7 +82,7 @@
 .collapse-container {
     overflow: hidden;
     height: 0;
-    transition: height 0.3s ease, padding 0.3s ease, visibility 0.3s;
+    transition: height 0.1s ease, padding 0.1s ease, visibility 0.1s;
     visibility: hidden;
     position: fixed;
     top: 85px;
@@ -102,7 +133,7 @@ body.overflow-hidden {
     opacity: 1;
 }
 
-@media (min-width: 0px) and (max-width: 992px) {
+@media (max-width: 992px) {
     .mobileScreen {
         display: none;
     }

@@ -1,34 +1,7 @@
-<!-- <hr class="text-white fs-3">
-<div class="p-fluid mt-4 bg-footer">
-    <div class="row justify-content-center">
-        <div class="col-3 h-90">
-            <ul class="m-0 h-90 p-0 d-flex justify-content-center align-items-center gap-icon">
-                <li *ngFor="let icondata of datafooterIcon.slice(0, 4); let i = index">
-                    <a [href]="icondata.url" class="nav-link">
-                        <i [ngClass]="icondata.icon" class="fs-1 text-white"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div class="col-6 h-90 d-flex justify-content-center align-items-center">
-            <h5 class="font-d text-white">{{footerDataD}}</h5>
-        </div>
-        <div class="col-3 h-90">
-            <ul class="m-0 h-90 p-0 d-flex justify-content-center align-items-center gap-icon">
-                <li *ngFor="let icondata of datafooterIcon.slice(4); let i = index">
-                    <a [href]="icondata.url" class="nav-link">
-                        <i [ngClass]="icondata.icon" class="fs-1 text-white"></i>
-¿                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>  -->
-
-<div class="grid grid-nogutter bg-footer mt-4">
+<div class="grid grid-nogutter bg-footer">
     <div class="w-12">
         <div class="grid grid-nogutter">
-            <div class="col-3">
+            <div class="col-12 xl:col-3 lg:col-3 md:col-12 sm:col-12">
                 <div class="h-90">
                     <ul class="m-0 h-full flex justify-content-center align-items-center gap-icon">
                         <li *ngFor="let icondata of datafooterIcon.slice(0, 4); let i = index">
@@ -39,12 +12,12 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="flex align-items-center  justify-content-center h-full">
+            <div class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12">
+                <div class="px-5 flex md:px-5 sm:px-5 xl:px-0 lg:px-0 align-items-center text-center justify-content-center h-full">
                     <h5 class="font-d text-white">{{footerDataD}}</h5>
                 </div>
             </div>
-            <div class="col-3">
+            <div class="col-12 xl:col-3 lg:col-3 md:col-12 sm:col-12">
                 <div class="h-90">
                     <ul class="m-0 h-full flex justify-content-center align-items-center gap-icon">
                         <li *ngFor="let icondata of datafooterIcon.slice(4); let i = index">

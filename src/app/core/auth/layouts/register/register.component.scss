@@ -11,36 +11,36 @@
 
 .bg-login-button {
     cursor: pointer;
-    background-color: #264653;
+    background-color: #21285f;
 
     &:hover {
-        background-color: #172c35;
+        background-color: #1b1f3d;
     }
 
     &:active {
-        background-color: #213d47;
+        background-color: #32375f;
     }
 }
 
 .text-a-login {
     cursor: pointer;
-    color: #264653;
+    color: #21285f;
 
     &:hover {
-        color: #355a69;
+        color: #1b1f3d;
     }
 
     &:active {
-        color: rgb(44, 78, 90);
+        color: #32375f;
     }
 }
 
 .bg-login {
-    background-color: #264653;
+    background-color: #21285f;
 }
 
 .text-login {
-    color: #264653;
+    color: #21285f;
 }
 
 .ContainerCollapseHeight {
@@ -66,12 +66,6 @@
 
 .font-subtitle {
     font-size: 18px;
-}
-
-.indicator {
-    &:active {
-        background-color: aquamarine;
-    }
 }
 
 .hidden-title {
@@ -189,7 +183,7 @@
     max-width: 30%;
     width: 100%;
     height: 10px;
-    background: #2A9D8F;
+    background: #263ad3;
     color: white;
     border: none;
     border-radius: 10px;

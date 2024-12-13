@@ -1,34 +1,27 @@
-<div class="grid grid-nogutter justify-content-center align-items-center">
-    <div class="col-9">
-        <div class="grid grid-nogutter">
-            <div class="col px-4 pt-4 mb-4" *ngFor="let data of systemdata">
-                <div class="card-primary-system bg-cards border-0 h-100 border-round-3xl relative">
-                    <div class="flex justify-content-center p-5 flex-column gap-2 card-body">
-                        <h5 class="card-title text-center text-purple fs-3">{{data.title}}</h5>
-                        <p class="card-text text-center fs-3 font-p">{{data.description}}</p>
-                    </div>
-                    <div class="relative border-round-bottom-3xl">
-                        <img [src]="data.img" [alt]="data.alrImg" class="card-img-top border-round-bottom-3xl">
-                        <button routerLink="#" [ngClass]="data.buttonStyle"
-                            class="cursor-pointer border-round-pill absolute buttonPri button-cards p-3 fs-4">
-                            <span>{{data.button}}</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div class="col px-4 pt-4 grid-col h-full">
-                <div class="card-second-system" *ngFor="let datatwo of secondSystemData">
-                    <div class="card-icon">
-                        <i [ngClass]="datatwo.icon" class="icon-size text-white"></i>
-                    </div>
-                    <div class="card-content">
-                        <p class="font-p fs-4">
-                            <span class="text-purple fs-3 font-semibolt">{{datatwo.title}}</span>
-                            {{datatwo.description}}
-                        </p>
-                    </div>
-                </div>
-            </div>
+<div class="grid grid-nogutter justify-content-center px-4 mb-4">
+    <div class="col-12 xl:col-9 lg:col-12 md:col-12 sm:col-12">
+      <div class="cards-container">
+        <div class="card-primary border-round-3xl" *ngFor="let data of systemdata">
+          <div class="card-primary-content">
+            <h5 class="card-title fs-3 text-purple">{{ data.title }}</h5>
+            <p class="card-description fs-4">{{ data.description }}</p>
+          </div>
+          <img [src]="data.img" [alt]="data.alrImg" class="card-image" />
+          <button [ngClass]="data.buttonStyle" class="card-button cursor-pointer border-round-pill buttonPri p-3 fs-4 w-9">
+            <span>{{ data.button }}</span>
+          </button>
         </div>
+        <div class="card-secondary">
+          <div class="mini-card border-round-3xl" *ngFor="let datatwo of secondSystemData">
+            <i [ngClass]="datatwo.icon" class="mini-card-icon"></i>
+            <div class="mini-card-content">
+              <p>
+                <span class="mini-card-title fs-4"><span class="text-purple fs-4">{{ datatwo.title }}</span> {{ datatwo.description }}</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+  

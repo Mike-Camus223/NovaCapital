@@ -2,11 +2,15 @@ $button-bg: #13F9C7;
 $hover-bg1: #7f2fad;
 $hover-bg2: #F94C67;
 $hover-bg3: rgb(45, 204, 205);
+$hover-common: #61076d;
 $hover-secti2card: #776cbb;
 $focus-outline1: #6A9C89;
 $focus-outline2: #374a9e;
 $focus-outline3: #3e398a;
+$focus-outlineCommon: #111849;
+$focus-triplecarousel: #111849;
 $focus-transparent: transparent;
+$focus-outlineCommon2: rgb(82, 56, 155);
 
 
 .buttonPri {
@@ -96,7 +100,7 @@ $focus-transparent: transparent;
 }
 
 .buttonPri3 {
-    background-color: rgb(0, 182, 182); 
+    background-color: rgb(0, 182, 182);
     color: #fff;
 
     &::before {
@@ -113,7 +117,7 @@ $focus-transparent: transparent;
     }
 
     &:focus {
-        box-shadow: 0 0 0 2px $focus-outline3, 0 0 0 4px rgb(2, 132, 132), 0 1px 2px 0 black; 
+        box-shadow: 0 0 0 2px $focus-outline3, 0 0 0 4px rgb(2, 132, 132), 0 1px 2px 0 black;
         transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     }
 }
@@ -138,3 +142,86 @@ $focus-transparent: transparent;
         transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
     }
 }
+
+.CommonButton {
+    background-color: #9182f8;
+    color: #fff;
+
+    &::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover:focus {
+        box-shadow: 0 0 0 2px $focus-outlineCommon, 0 0 0 4px $hover-secti2card, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $focus-outlineCommon, 0 0 0 4px #9182f8, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}
+
+.CommonButtonVar2 {
+    background-color: #9182f8;
+    color: #fff;
+
+    &::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover:focus {
+        box-shadow: 0 0 0 2px $focus-outlineCommon2, 0 0 0 4px $hover-secti2card, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $focus-outlineCommon2, 0 0 0 4px #9182f8, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}
+
+.TripleCarouselbutton {
+    background-color: #9182f8;
+    color: #fff;
+
+    &::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover::before {
+        background-color: $hover-secti2card;
+    }
+
+    &:hover:focus {
+        box-shadow: 0 0 0 2px $focus-triplecarousel, 0 0 0 4px $hover-secti2card, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 2px $focus-triplecarousel, 0 0 0 4px #9182f8, 0 1px 2px 0 black;
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

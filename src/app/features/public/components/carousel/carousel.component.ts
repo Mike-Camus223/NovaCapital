@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { PhotoService } from '../../../../core/services/photo.service';
 
 interface ButtonStyle {
-  buttonStyle: 'buttonPri1' | 'buttonPri2' | 'buttonPri3'; 
+  buttonStyle: 'buttonPri1' | 'buttonPri2' | 'buttonPri3';
   backgroundClass: string;
 }
 
@@ -10,7 +10,6 @@ interface ItemList {
   dataItem: string;
   dataItem2: string;
   dataItem3: string;
-
 }
 
 interface dataAnnouncement {
@@ -19,7 +18,7 @@ interface dataAnnouncement {
   subtitle: string;
   title: string;
   infor: string;
-  style: ButtonStyle; 
+  style: ButtonStyle;
   itemlist: ItemList;
   backgroundImage: boolean;
   Pages: 'Page1' | 'Page2' | 'Page3';
@@ -28,14 +27,9 @@ interface dataAnnouncement {
 @Component({
   selector: 'app-carousel',
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.scss'
+  styleUrls: ['./carousel.component.scss']
 })
-export class CarouselComponent implements OnInit {
-  buttonhover = false;
-  images: any[] = [];
-
-  constructor(private photoService: PhotoService) { }
-
+export class CarouselComponent implements OnInit, OnDestroy {
   firtsCarousel: dataAnnouncement[] = [
     {
       firtsPhoto: 'assets/images/11.png',
@@ -45,7 +39,7 @@ export class CarouselComponent implements OnInit {
       infor: 'Nuestro enfoque es convertir tus metas financieras en realidad. Con soluciones personalizadas y un equipo comprometido, te ofrecemos el apoyo necesario para alcanzar tus objetivos, ya sea ahorrar, invertir o hacer crecer tu patrimonio. El propósito es acompañarte en cada paso hacia el éxito financiero.',
       style: {
         backgroundClass: 'bg-firts',
-        buttonStyle: 'buttonPri1', 
+        buttonStyle: 'buttonPri1',
       },
       itemlist: {
         dataItem: '',
@@ -63,7 +57,7 @@ export class CarouselComponent implements OnInit {
       infor: 'En NovaCapital, la seguridad es nuestro compromiso. Con tecnología de vanguardia y estrictos protocolos de protección, garantizamos que tus datos y transacciones estén siempre seguros. En cada paso de tu recorrido financiero, estamos aquí para respaldarte con integridad y confianza.',
       style: {
         backgroundClass: 'bg-second',
-        buttonStyle: 'buttonPri2', 
+        buttonStyle: 'buttonPri2',
       },
       itemlist: {
         dataItem: '',
@@ -92,10 +86,50 @@ export class CarouselComponent implements OnInit {
       Pages: 'Page3',
     }
   ];
+  buttonhover: boolean = false;
+  currentIndex = 0;
+  transformStyle = 'translateX(0%)';
+  autoplayInterval: any;
+
+  constructor(private photoService: PhotoService) { }
 
   ngOnInit() {
     this.photoService.obtenerImagenes().then((images) => {
-      this.images = images;
     });
+    this.startAutoplay();
+  }
+
+  ngOnDestroy() {
+    this.stopAutoplay();
+  }
+
+  nextSlide(): void {
+    this.currentIndex = (this.currentIndex + 1) % this.firtsCarousel.length;
+    this.updateTransformStyle();
+  }
+  
+  goToSlide(index: number): void {
+    this.currentIndex = index;
+    this.updateTransformStyle();
+    this.resetAutoplay();
+  }
+
+  updateTransformStyle(): void {
+    this.transformStyle = `translateX(-${this.currentIndex * 100}%)`;
+  }
+
+  startAutoplay(): void {
+    this.autoplayInterval = setInterval(() => {
+      this.nextSlide();
+    }, 50000); 
+  }
+
+  stopAutoplay(): void {
+    clearInterval(this.autoplayInterval);
+  }
+
+  resetAutoplay(): void {
+    this.stopAutoplay();
+    this.startAutoplay();
   }
 }

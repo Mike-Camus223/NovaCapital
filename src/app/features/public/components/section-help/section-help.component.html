@@ -1,0 +1,20 @@
+<div class="grid bg-help  grid-nogutter h-section-help">
+    <div
+        class="h-section-help flex paddingSec flex-column lg:flex-row xl:flex-row gap-rowsec justify-content-center align-items-center w-12 h-full overflow-hidden">
+        <button [routerLink]="itemDataHelp.link"
+            class="xl:col-2 lg:col-4 md:col-12 sm:col-12 border-none cursor-pointer flex flex-column full-container align-items-center gap-2"
+            *ngFor="let itemDataHelp of DataSection; let i = index">
+            <div class="container-height">
+                <div class="container-icon border-circle">
+                    <i class="fa-solid relative z-3" [ngClass]="itemDataHelp.icon"
+                        [ngStyle]="{color:itemDataHelp.color}">
+                    </i>
+                </div>
+            </div>
+            <div class="flex flex-column gap-3 text-center">
+                <h2 class="fs-4 text-26 font-light">{{itemDataHelp.title}}</h2>
+                <p class="fs-4 font-semibold">{{itemDataHelp.linkName}}</p>
+            </div>
+        </button>
+    </div>
+</div>

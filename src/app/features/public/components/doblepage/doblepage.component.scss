@@ -1,0 +1,102 @@
+.diagonal {
+    clip-path: polygon(0% 0%, 89.5% 0%, 100% 100%, 0% 100%);
+    outline: none;
+    border: none;
+}
+
+.height-40 {
+    height: 50rem;
+}
+
+.image-height {
+    height: 50rem;
+}
+
+.diagonal2 {
+    clip-path: polygon(120px 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.app-doublepage1 {
+    background-color: #111849;
+}
+
+.app-doublepage2 {
+    background-color: rgb(82, 56, 155);
+}
+
+.app-doublepage3 {
+    background-color: rgb(202, 125, 31);
+}
+
+.Updiv {
+    transform: translateY(-10%);
+    transform: translateX(-15%);
+    ;
+}
+
+.Updiv2 {
+    transform: translateY(-10%);
+    transform: translateX(15%);
+    ;
+}
+
+.imagedouble {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagedouble img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+@media (max-width: 991px) {
+    .diagonal {
+        clip-path: none;
+    }
+
+    .diagonal2 {
+        clip-path: none;
+    }
+
+    .height-40 {
+        height: auto;
+        padding-top: 8rem;
+        padding-bottom: 8rem;
+    }
+
+    .Updiv {
+        transform: translateY(0)
+    }
+
+    .Updiv2 {
+        transform: translateY(1%)
+    }
+}
+
+@media (max-width: 768px) {
+    .imagedouble {
+        height: auto;
+    }
+
+    .imagedouble img {
+        object-fit: contain;
+        height: auto;
+    }
+
+    .image-height {
+        height: auto;
+    }
+
+    .height-40 {
+        height: auto;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+}

@@ -1,0 +1,138 @@
+.h-section-help {
+    height: 50rem;
+}
+
+.bg-help {
+    background-color: #fff;
+}
+
+.container-height {
+    height: 20rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    text-shadow: 13px 14px 2px rgba(0, 0, 0, 0.178);
+}
+
+.container-icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17rem;
+    width: 17rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 17rem;
+    width: 17rem;
+    background-color: rgb(240, 240, 240);
+    position: relative;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
+
+.container-icon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17rem;
+    height: 12rem;
+    background-color: rgb(255, 255, 255);
+    z-index: 1;
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+    transform: translateY(-100%);
+}
+
+.full-container:hover .container-icon-wrapper {
+    transform: translateY(-10%);
+}
+
+.full-container:hover .container-icon::before {
+    transform: translateY(0%);
+}
+
+.container-icon i {
+    position: absolute;
+    z-index: 2;
+}
+
+.full-container {
+    background-color: transparent;
+}
+
+.full-container:hover p {
+    color: #430f5a;
+    transition: color 0.3s linear;
+}
+
+.full-container p {
+    color: #972fc4;
+}
+
+.text-26 {
+    font-size: 26px;
+}
+
+.gap-rowsec {
+    gap: 20rem;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .gap-rowsec {
+        gap: 0;
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    .container-icon::before {
+        display: none;
+    }
+
+    .text-26 {
+        font-size: 22px;
+    }
+
+    .gap-rowsec {
+        gap: 7rem;
+    }
+
+    .paddingSec {
+        padding: 4rem 0;
+    }
+
+    .h-section-help {
+        height: 100%;
+    }
+
+    .full-container {
+        background-color: transparent;
+    }
+
+    .full-container:hover .container-icon {
+        transform: translateY(-50px);
+    }
+
+    .full-container:hover .container-icon::before {
+        transform: translateY(-100%);
+    }
+
+    .full-container:hover p {
+        color: #430f5a;
+        transition: color 0.3s linear;
+    }
+
+    .full-container p {
+        color: #972fc4;
+    }
+}

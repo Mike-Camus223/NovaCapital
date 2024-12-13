@@ -1,0 +1,52 @@
+<div class="p-fluid" *ngFor="let page of ShowTriplePage; let i = index">
+  <div *ngIf="page === 'PageTriple1'" class="tripe-he bg-triplecards justify-content-center flex align-items-center">
+    <div class="card w-12 xl:w-8 lg:w-9 md:w-10 sm:w-12">
+      <p-carousel 
+        [value]="dataPageTripleGrouped['PageTriple1']" 
+        [numVisible]="3" 
+        [numScroll]="1" 
+        [circular]="true" 
+        [showIndicators]="false"
+        [showNavigators]="false"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-item pTemplate="item">
+          <div class="bg-cardscaru border-round-xl px-5 py-5 xl:px-7 xl:py-6 lg:px-7 lg:py-6 md:px-5 md:py-5 sm:px-5 sm:py-5 h-25rem mx-4 flex flex-column" style="height: 100%;">
+            <p class="fs-4 text-white mb-3 text-center">
+              {{ item.info.info1 || item.info.info2 || item.info.info3 }}
+            </p>
+            <div class="flex flex-column align-items-center justify-content-end mt-auto">
+              <button class="fs-4 text-white mb-2 w-12 border-round-pill p-3 buttonPri TripleCarouselbutton">
+                <span>{{ item.buttons.button1 || item.buttons.button2 || item.buttons.button3 }}</span>
+              </button>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+  <div *ngIf="page === 'PageTriple2'" class="tripe-he2 bg-triplecards2 justify-content-center flex align-items-center">
+    <div class="card w-12 xl:w-8 lg:w-9 md:w-10 sm:w-12">
+      <div class="p-fluid flex justify-content-center mb-7">
+        <h2 class="fs-title text-900 font-light text-center">
+          Novedades sobre NovaCapital
+        </h2>
+      </div>
+      <p-carousel 
+        [value]="dataPageTripleGrouped['PageTriple2']" 
+        [numVisible]="3" 
+        [numScroll]="1" 
+        [circular]="true" 
+        [showIndicators]="false"
+        [showNavigators]="false"
+        [responsiveOptions]="responsiveOptions">
+        <ng-template let-item pTemplate="item">
+          <div class="bg-cardscaru2 border-round-xl pt-0 px-5 xl:pt-6 xl:px-7 lg:px-7 lg:pt-6 md:pt-5 md:px-5 sm:pt-0 sm:px-5 h-25rem mx-4 infodivRespo" style="height: 100%;">
+            <p class="fs-4 text-white text-center">
+              {{ item.info.info1 || item.info.info2 || item.info.info3 }}
+            </p>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+  </div>
+</div>
