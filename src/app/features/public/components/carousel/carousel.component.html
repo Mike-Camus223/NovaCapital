@@ -3,13 +3,13 @@
     <div class="carousel-item" *ngFor="let item of firtsCarousel" [ngClass]="item.style.backgroundClass">
       <div class="grid grid-nogutter h-carousel shadow-carousel">
         <div *ngIf="item.Pages === 'Page1'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 flex justify-content-center xl:justify-content-end lg:justify-content-end md:justify-content-center sm:justify-content-center">
-          <div class="flex align-items-center xl:w-10 lg:w-10 md:w-12 sm:w-12 w-12 h-full moveY">
+          <div class="flex align-items-start xl:align-items-center lg:align-items-center md:align-items-center sm:align-items-start  xl:w-10 lg:w-10 md:w-12 sm:w-12 w-12 py-4 xl:py-0 lg:py-0 md:py-6 sm:py-4 h-full moveY">
             <div class="flex flex-column gap-5 xl:px-7 lg:px-7 md:px-5 sm:px-4 px-4">
               <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
               <h2 class="title text-white">{{ item.title }}</h2>
               <p class="fs-3 text-white">{{ item.infor }}</p>
               <div class="mt-4">
-                <button class="w-5 border-round-pill border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                <button class="w-12 xl:w-5 lg:w-6 md:w-5 sm:w-6 border-round-pill border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
                   <div class="d-flex defa align-items-center justify-content-center">
                     <span class="d-flex justify-content-center align-items-center gap-4">
                       <h3 class="fs-4">
@@ -29,16 +29,16 @@
           </div>
         </div>
         <div *ngIf="item.Pages === 'Page2'" class="col-12 xl:col-7 lg:col-7 md:col-12 sm:col-12 flex justify-content-center">
-          <div class="flex align-items-center xl:w-8 lg:w-8 md:w-12 sm:w-12 w-12 h-full moveY">
+          <div class="flex align-items-start xl:align-items-center lg:align-items-center md:align-items-center sm:align-items-start xl:w-8 lg:w-8 md:w-12 sm:w-12 w-12 h-full py-4 xl:py-0 lg:py-0 md:py-6 sm:py-4 moveY">
             <div class="flex flex-column gap-5 xl:px-4 lg:px-4 md:px-5 sm:px-4 px-4">
               <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
               <h2 class="title text-white">{{ item.title }}</h2>
               <p class="fs-3 text-white">{{ item.infor }}</p>
               <div class="flex mt-4 gap-4">
-                <button class="fs-4 border-round-pill xl:w-3 lg:w-3 md:w-4 sm:w-4 w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                <button class="fs-4 border-round-pill xl:w-3 lg:w-4 md:w-4 sm:w-4 w-6 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
                   <span>Learn More</span>
                 </button>
-                <button class="fs-4 border-round-pill xl:w-3 lg:w-3 md:w-4 sm:w-4 w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+                <button class="fs-4 border-round-pill xl:w-3 lg:w-4 md:w-4 sm:w-4 w-6 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
                   <span>Tutorial</span>
                 </button>
               </div>
@@ -50,8 +50,8 @@
             <img [src]="item.firtsPhoto" draggable="false" [alt]="item.altfirts" class="bg-image"/>
           </div>
         </div>
-        <div *ngIf="item.Pages === 'Page3'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 flex justify-content-end">
-          <div class="flex align-items-center xl:w-10 lg:w-10 md:w-12 sm:w-12 w-12 h-full moveThirdY">
+        <div *ngIf="item.Pages === 'Page3'" class="col-12 xl:col-6 lg:col-7 md:col-12 sm:col-12 flex justify-content-end">
+          <div class="flex align-items-start xl:align-items-center lg:align-items-center md:align-items-center sm:align-items-start xl:w-10 lg:w-10 md:w-12 sm:w-12 w-12 h-full py-4 xl:py-0 lg:py-0 md:py-6 sm:py-4 moveThirdY">
             <div class="flex flex-column gap-5 xl:px-7 lg:px-7 md:px-5 sm:px-4 px-4">
               <p class="fs-4 title-color">{{ item.subtitle | uppercase }}</p>
               <h2 class="title text-white">{{ item.title }}</h2>
@@ -72,13 +72,13 @@
                   </li>
                 </ul>
               </div>
-              <button class="fs-4 border-round-pill w-4 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
+              <button class="fs-4 border-round-pill w-12 xl:w-4 lg:w-6 md:w-5 sm:w-6 border-none p-3 buttonPri" [ngClass]="item.style.buttonStyle">
                 <span>Solicitar Tarjeta</span>
               </button>
             </div>
           </div>
         </div>
-        <div *ngIf="item.Pages === 'Page3'" class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 separationb2">
+        <div *ngIf="item.Pages === 'Page3'" class="col-12 xl:col-6 lg:col-5 md:col-12 sm:col-12 separationb2">
           <div class="flex h-full">
             <img [src]="item.firtsPhoto" draggable="false" [alt]="item.altfirts" class="bg-image"/>
           </div>
