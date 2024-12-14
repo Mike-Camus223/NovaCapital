@@ -16,19 +16,16 @@
 </div>
 <div class="p-fluid ContainerCollapseHeight">
   <div class="grid grid-nogutter">
-    <div class="col-6">
+    <div class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12">
       <div class="bg-white ContainerCollapseHeight flex flex-column justify-content-center align-items-center">
-        <div class="card w-5 flex flex-column">
+        <div class="card xl:w-6 lg:w-8 md:w-7 sm:w-9 w-10 flex flex-column">
           <div class="flex flex-column gap-5 mb-5" [ngClass]="{ 'hidden-container': currentStep === 3 }">
             <div class="text-600 fs-3">
               <i class="fa-solid fa-gem fs-2"></i><span class="fs-2"> NovaCapital</span>
             </div>
             <h2 class="title-size text-black font-bold" [ngClass]="{ 'hidden-title': currentStep === 3 }">
-              <span class="flex flex-column gap-1">
-                Control Your Finances,
-              </span>
               <span>
-                Join Us Today!
+                Control Your Finances,<br class="BreakText2"> Join Us Today!
               </span>
             </h2>
           </div>
@@ -161,18 +158,24 @@
         </div>
       </div>
     </div>
-    <div class="col-6">
+    <div class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 hidden md:hidden sm:hidden lg:block xl:block">
       <div class="bg-login flex justify-content-center align-items-center ContainerCollapseHeight">
-        <p-carousel [value]="ImagesCarousel" [numVisible]="1" [numScroll]="1" showNavigators="false"
-          showIndicators="false" [autoplayInterval]="4000"
-          [indicatorStyle]="{'border-radius': '10px', 'width' : '10px', 'height' : '10px'}"
+        <p-carousel [value]="ImagesCarousel" 
+        [numVisible]="1" 
+        [numScroll]="1" 
+        showNavigators="false"
+        showIndicators="false" 
+        [autoplayInterval]="4000"
+        [indicatorStyle]="{'border-radius': '10px', 'width' : '10px', 'height' : '10px'}"
           class="flex justify-content-center align-items-center">
           <ng-template let-images pTemplate="item">
             <div class="flex align-items-center flex-column justify-content-center" style="gap: 20px;">
-              <img [src]="images.image" class="m-auto imgCarousel" [alt]="images.altImage"
-                [draggable]="images.draggable">
-              <div class="py-4 flex gap-3 flex-column w-8">
-                <h2 class="fs-1 text-white title-size">
+              <img [src]="images.image" 
+              class="m-auto imgCarousel" 
+              [alt]="images.altImage"
+              [draggable]="images.draggable">
+              <div class="py-4 flex gap-3 flex-column w-8 lg:w-7 xl:w-8 sm:w-8 md:w-8">
+                <h2 class="text-white title-size">
                   {{images.title}}
                 </h2>
                 <div class="flex gap-5 align-items-center">

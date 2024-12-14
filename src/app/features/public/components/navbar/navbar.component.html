@@ -1,36 +1,37 @@
 <nav class="bg-navbar w-12">
     <div class="grid flex justify-content-center">
         <div class="col-12 xl:col-10 lg:col-10 md:col-12 sm:12 mobileCol">
-            <div class="p-fluid align-items-center flex justify-content-between marginNav transition-all duration-300 mainNavi" [ngClass]="{ 'transformScroll': isScrolled }">
+            <div class="p-fluid align-items-center flex justify-content-between marginNav transition-all duration-300 mainNavi"
+                [ngClass]="{ 'transformScroll': isScrolled }">
                 <div class="logomobile lg:hidden xl:hidden visibleNav">
                     <a class="text-white" routerLink="">
                         <i class="fa-solid fa-gem fs-2"></i><span class="fs-1"> NovaCapital</span>
                     </a>
                 </div>
-                <ul *ngIf="!isMobile || dropdownOpen"
-                    class="nav-links lg:flex hidden align-items-center gap-6 list-none m-0 lg:flex-row">
+                <ul class="nav-links h-full lg:flex hidden align-items-center gap-6 list-none m-0 lg:flex-row">
                     <li class="text-white">
                         <a class="text-white logodesk brand" routerLink="">
                             <i class="fa-solid fa-gem"></i>
                             <span> NovaCapital</span>
                         </a>
                     </li>
-                    <li class="text-white fs-3"><a routerLink="/news"
-                            class="font-light hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Novedades</a>
+                    <li class="h-full borderBottomNav text-white fs-3 active">
+                        <a href="/news"
+                            class="h-full flex align-items-center font-light hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Novedades</a>
                     </li>
-                    <li class="text-white fs-3"><a routerLink="#"
-                            class="font-light hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Conocenos</a>
+                    <li class="h-full borderBottomNav text-white fs-3">
+                        <a href="/about"
+                            class="h-full flex align-items-center font-light hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Conócenos</a>
                     </li>
-                    <li class="text-white fs-3"><a routerLink="#"
-                            class="font-light hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Personas</a>
+                    <li class="h-full borderBottomNav text-white fs-3">
+                        <a href="/people"
+                            class="h-full flex align-items-center font-light hover:text-white-alpha-90 transition-linear transition-duration-200 active:text-white-alpha-70">Personas</a>
                     </li>
                 </ul>
                 <div class="flex md:hidden sm:hidden xl:block lg:block mobileScreen gap-2">
                     <ul class="flex gap-3 list-none mobileScreen">
                         <li *ngFor="let dataButtonAuth of buttonAuthSystems; let i = index">
-                            <button
-                            [routerLink]="dataButtonAuth.link"
-                            [ngClass]="{
+                            <button [routerLink]="dataButtonAuth.link" [ngClass]="{
                                     'bg-register text-white border-2': i === 0,
                                     'bg-warning2 border-2': i === 1
                                 }" class="cursor-pointer border-solid border-round-lg py-2 px-3 toggle-collapse-button"

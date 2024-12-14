@@ -17,7 +17,7 @@ export class NavbarComponent {
   menuVisible: boolean = false;
   dropdownOpen = false;
   isMobile = false;
-  isScrolled = false; // Nueva variable para rastrear el estado de scroll
+  isScrolled = false; 
 
 
   buttonAuthSystems: ButtonAuth[] = [

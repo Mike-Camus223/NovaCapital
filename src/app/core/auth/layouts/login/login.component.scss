@@ -47,9 +47,35 @@
 .imgCarousel {
     width: 50rem;
     height: 55rem;
+    object-fit: cover;
 }
 
 .font-subtitle {
     font-size: 18px;
 }
 
+.breakText {
+    display: block;
+}
+
+@media (max-width: 1199px) {
+    .imgCarousel {
+        width: 40rem;
+        height: 55rem;
+    }
+
+    .title-size {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 991px) {
+    .title-size {
+        font-size: 24px;
+    }
+
+    .breakText {
+        display: none;
+    }
+    
+}

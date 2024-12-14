@@ -121,7 +121,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
   startAutoplay(): void {
     this.autoplayInterval = setInterval(() => {
       this.nextSlide();
-    }, 50000); 
+    }, 7000); 
   }
 
   stopAutoplay(): void {

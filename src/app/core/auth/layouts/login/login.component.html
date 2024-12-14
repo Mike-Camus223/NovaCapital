@@ -1,18 +1,16 @@
 <div class="p-fluid ContainerCollapseHeight">
     <div class="grid grid-nogutter">
-        <div class="col-6">
+        <div class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12">
             <div class="bg-white ContainerCollapseHeight flex justify-content-center align-items-center">
-                <div class="card w-6 flex flex-column gap-2">
+                <div class="card xl:w-6 lg:w-8 md:w-7 sm:w-9 w-10 flex flex-column gap-2">
                     <div class="flex flex-column gap-5">
                         <div class="text-600 fs-3">
                             <i class="fa-solid fa-gem fs-2"></i><span class="fs-2"> NovaCapital</span>
                         </div>
                         <h2 class="title-size text-black font-bold">
-                            <span class="flex flex-column gap-1">
-                                Good to
-                            </span>
                             <span>
-                                welcome you! 👋
+                                Good to
+                                <br class="breakText"> welcome you! 👋
                             </span>
                         </h2>
                         <span class="font-title-log text-color-secondary">
@@ -59,7 +57,7 @@
             </div>
         </div>
     
-        <div class="col-6">
+        <div class="col-12 xl:col-6 lg:col-6 md:col-12 sm:col-12 hidden md:hidden sm:hidden lg:block xl:block">
             <div class="bg-login flex justify-content-center align-items-center ContainerCollapseHeight">
                 <p-carousel 
                     [value]="ImagesCarousel" 
@@ -78,7 +76,7 @@
                                 class="m-auto imgCarousel" 
                                 [alt]="images.altImage"
                                 [draggable]="images.draggable">
-                            <div class="py-4 flex gap-3 flex-column w-8">
+                            <div class="py-4 flex gap-3 flex-column w-8 lg:w-7 xl:w-8 sm:w-8 md:w-8">
                                 <h2 class="fs-1 text-white title-size">
                                     {{images.title}}
                                 </h2>
